@@ -4,4 +4,6 @@ path='projects/greendoglab.com'
 [deploy]
 git checkout master
 git pull
+source ~/.envs/greendoglab/bin/activate
 grunt build
+./src/app.py build
