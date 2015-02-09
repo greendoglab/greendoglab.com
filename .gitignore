@@ -1,0 +1,14 @@
+# dev specific
+.sass-cache
+node_modules
+bower_components
+.ideas
+
+static/*
+!static/fonts
+!static/files
+
+assets/css
+
+# os x
+.DS_Store
