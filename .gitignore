@@ -4,11 +4,10 @@ node_modules
 bower_components
 .ideas
 
-static/*
-!static/fonts
-!static/files
+src/static/*
+!src/static/files
 
-assets/css
+src/assets/css
 
 # os x
 .DS_Store
