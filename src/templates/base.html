@@ -25,8 +25,53 @@
 </head>
 <body>
 
+<header class="site-header">
+    <a href="/#/" class="menu-logo"></a>
+    <a href="/#/" class="green-word">GreenDogLab</a>
+</header>
+
 {% block content %}
 {% endblock content %}
+
+<!-- aside -->
+<aside class="order">
+    <a href="#" class="green-link" ng-hide="hideOrderLink">Order design or something else &rarr;</a>
+</aside>
+<!-- /aside -->
+
+<!-- footer -->
+<footer class="site-footer">
+    <!-- column location-list-->
+    <div  class="column location-list">
+        <ul>
+            <li>Current location</li>
+            <li class="location">Phillipines, Manila</li>
+        </ul>
+    </div>
+    <!-- /column location-list-->
+    <!-- column -->
+    <div  class="column">
+        <ul>
+            <li>+382 558-09-59</li>
+            <li>miha@greendoglab.com</li>
+        </ul>
+    </div>
+    <!-- /column -->
+    <!-- column social-->
+    <div  class="column social">
+        <ul>
+            <li><a href="#" class="fa fa-google-plus"></a></li>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+        </ul>
+    </div>
+    <!-- /column social-->
+    <!-- column -->
+    <div  class="column">
+        <span>GreenDogLab.com (c) 2008-forever</span>
+    </div>
+    <!-- /column -->
+</footer>
+<!-- /footer -->
 
 </body>
 </html>

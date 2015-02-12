@@ -1,2 +1,2 @@
-title: We build successful web things
-subtitle: With proudly from Ukraine
+title: We make cool things
+subtitle: Design Frontend Django

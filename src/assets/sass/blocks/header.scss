@@ -1,0 +1,33 @@
+header.site-header{
+    position: fixed;
+    background: white;
+    width: 100%;
+    height: 100px;
+    top: 0px;
+    padding-top: 18px;
+    box-sizing: border-box;
+    @include box;
+    a.menu-logo {
+        @include inline-middle;
+        background-image: url(/static/images/Logo2.png);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: 100%;
+        width: 114px;
+        height: 60px;
+        float: left;
+    } // logo
+    a.green-word {
+        @include inline-middle;
+        color: #7ED321;
+        font-family: 'PT Sans Narrow', sans-serif;
+        font-size: rem(48);
+        z-index: 3;
+        font-weight: 400;
+        text-decoration: none;
+        display: block;
+        position: relative;
+        top: 15px;
+        right: -10px;
+    } // green-word
+} // site-header
