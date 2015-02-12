@@ -1,7 +1,8 @@
 .site-footer {
-    padding: 40px 50px;
+    padding: 40px 0;
     @include clearfix;
     font-size: rem(18);
+    @include box;
     .column {
         display: block;
         width: calc(25% - 10px);

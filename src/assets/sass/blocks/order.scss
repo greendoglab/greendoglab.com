@@ -1,4 +1,5 @@
 aside.order {
+    @include box;
     .green-link {
         margin: 40px 0;
         display: block;
