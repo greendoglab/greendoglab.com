@@ -1,6 +1,5 @@
 header.site-header{
     position: fixed;
-    background: white;
     width: 100%;
     height: 100px;
     top: 0px;
@@ -29,5 +28,9 @@ header.site-header{
         position: relative;
         top: 15px;
         right: -10px;
+        &.shadows {
+            color: #7ED321;
+            text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
+        } // &.shadows
     } // green-word
 } // site-header
