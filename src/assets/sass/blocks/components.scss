@@ -1,13 +1,16 @@
-aside.order {
+aside.bit-title-line {
     @include box;
-    .green-link {
-        margin: 40px 0;
+    margin: 45px 0;
+    // padding: 10px 0;
+    h2, .green-link {
         display: block;
-        padding: 10px 0;
         font-size: rem(50);
         text-decoration: none;
         text-align: center;
         color: #7ED321;
         font-family: 'PT Sans Narrow', sans-serif;
-    } // .green-link
+    } // h2, .green-link
+    h2 {
+        color: #363636;
+    } // h2
 } // aside
