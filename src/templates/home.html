@@ -1,11 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="home-titles">
-    <h1>{{ page.title }}</h1>
-    <h2>{{ page.subtitle }}</h2>
+<div class="welcome">
+    <div class="welcome-titles">
+        <h1 data-type="parallax" data-speed="14">{{ page.title }}</h1>
+        <h2 data-type="parallax" data-speed="14">{{ page.subtitle }}</h2>
+    </div>
 </div>
-
+<!-- aside -->
+<aside class="bit-title-line">
+    <h2>Something what we already did</h2>
+</aside>
+<!-- /aside -->
 <!-- works -->
 <div class="works">
 {% for work in works %}
