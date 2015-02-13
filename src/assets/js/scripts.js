@@ -10,25 +10,67 @@
         }
     }
 
-    function mainMenu() {
-        var trigger = $('[data-role="menu-trigger"]');
-        var menu = $('[data-role="menu"]');
-        var body = $('body');
+    function RandomBack() {
+        var images = [
+            'back1.jpg',
+            'back2.jpg',
+            'back4.jpg',
+            'back6.jpg',
+            'back7.jpg',
+        ];
 
-        trigger.click(function() {
-            $(this).toggleClass('active');
-            stateCheck(menu, 'active');
-            stateCheck(body, 'open-menu');
+        $('.welcome').css({'background-image': 'url(/static/images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+    }
+
+    function Welcome() {
+
+        $(window).on('scroll', function() {
+            var scrollPos = $(this).scrollTop();
+            var windowHeight = $(window).height();
+            // siteName
+            var siteName = $('.green-word');
+            // fade & parallax
+            var fadeStart=windowHeight/6;
+            var fadeUntil=windowHeight/2;
+            var elem = $('[data-type="parallax"]');
+
+            // siteName action
+            if (scrollPos >= (windowHeight-100)) {
+                console.log('sucsess');
+                siteName.addClass('shadows');
+            }
+            else {
+                siteName.removeClass('shadows');
+            }
+
+            // parallax action
+            elem.each(function(){
+                var block = $(this);
+                var opacity = 0;
+
+                var offset = $(window).scrollTop();
+                var diff = offset / block.data('speed');
+                block.css({ marginTop: -diff });
+                console.log(diff);
+                if( offset<=fadeStart ){
+                    opacity=1;
+                }else if( offset<=fadeUntil ){
+                    opacity=1-offset/fadeUntil;
+                }
+                block.css('opacity',opacity);
+
+            });
         });
     }
 
     // document ready
     $(window).on('load', function() {
-        mainMenu()
+        RandomBack();
+        Welcome();
     });
 
     // all initial on window resize
-    $(window).on('resize', function() {});
+    // $(window).on('resize', function() {});
 
 
 })(jQuery);
