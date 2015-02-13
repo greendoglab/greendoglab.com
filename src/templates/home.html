@@ -22,11 +22,11 @@
                 {% endfor %}
                 </ul>
             </div>
-            <div class="info-block text-right">
+            <div class="info-block">
                 <ul>
-                    <li><a href="" class="fa fa-external-link">
-                    <li><a href="" class="fa fa-github"></a></li>
-                    <li><a href="{{ url_for("page", path=work.path) }}">details</a></li>
+                    {% if work.url %}<li><a href="{{ work.url }}" class="fa fa-external-link"></a></li>{% endif %}
+                    {% if work.repo %}<li><a href="{{ work.repo }}" class="fa fa-github"></a></li>{% endif %}
+                    {% if work.details %}<li><a href="{{ url_for("page", path=work.path) }}">details</a></li>{% endif %}
                 </ul>
             </div>
         </div>

@@ -5,19 +5,19 @@
     .work {
         flex: 1 33.3333%;
         .work-info {
-            background: #7ED321;
+            // background: #7ED321;
             font-family: 'PT Sans Narrow', sans-serif;
-            font-size: rem(25);
+            padding: 20px;
             .info-block {
-                color: white;
+                color: #363636;
                 h2 {
-                    padding-left: 20px;
-                    padding: 20px;
                     margin: 0;
+                    font-size: rem(26);
                 } // h2
                 .tech {
-                    padding-left: 20px;
                     margin: 0;
+                    font-size: rem(22);
+                    padding: 0;
                     li {
                         display: inline-block;
                         &:not(:last-of-type) {
@@ -33,7 +33,7 @@
                 ul {
                     list-style: none;
                     margin: 0;
-                    padding: 20px;
+                    padding: 0;
                     li {
                         display: inline-block;
                         a {
