@@ -6,10 +6,33 @@
     <h2>{{ page.subtitle }}</h2>
 </div>
 
+<!-- works -->
+<div class="works">
 {% for work in works %}
-<div>
-    <a href="{{ url_for("page", path=work.path) }}">{{ work.title }}</a>
-</div>
+    <!-- work -->
+    <div class="work">
+        <div class="poster" style="background: url({{ work.poster }});"></div>
+        <div class="work-info">
+            <div class="info-block">
+                <h2>{{ work.title }}</h2>
+                <ul class="tech">
+                {% for tech in work.tech %}
+                    <li>{{ tech }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            <div class="info-block text-right">
+                <ul>
+                    <li><a href="" class="fa fa-external-link">
+                    <li><a href="" class="fa fa-github"></a></li>
+                    <li><a href="{{ url_for("page", path=work.path) }}">details</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /work -->
 {% endfor %}
+</div>
+<!-- /works -->
 
 {% endblock content %}
