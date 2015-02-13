@@ -3,7 +3,6 @@
     flex-flow: row wrap;
     justify-content: space-around;
     .work {
-        // width: ;
         flex: 1 33.3333%;
         .work-info {
             background: #7ED321;
@@ -15,7 +14,7 @@
                     padding-left: 20px;
                     padding: 20px;
                     margin: 0;
-                }
+                } // h2
                 .tech {
                     padding-left: 20px;
                     margin: 0;
@@ -25,12 +24,12 @@
                             &:after {
                                 content: ', ';
                             }  
-                        } 
-                    }
-                }
+                        } // после всех элементов списка, кроме последнего
+                    } // li
+                } // tech
                 &.text-right {
                     text-align: right;
-                }
+                } // &.text-right
                 ul {
                     list-style: none;
                     margin: 0;
@@ -41,11 +40,11 @@
                             text-decoration: none;
                             color: black;
                             padding-right: 20px;
-                        }
-                    }
-                }
-            }
-        }
+                        } // a
+                    } // li
+                } // ul
+            } // info-block
+        } // work-info
     } // work
 } // works
 
