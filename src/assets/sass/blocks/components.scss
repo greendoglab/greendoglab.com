@@ -1,3 +1,8 @@
+[data-type="parallax"] {
+    margin-top: 0;
+    opacity: 1;
+}
+
 aside.bit-title-line {
     @include box;
     margin: 45px 0;
@@ -14,3 +19,12 @@ aside.bit-title-line {
         color: #363636;
     } // h2
 } // aside
+
+.ua-label {
+    @include inline-middle;
+    width: 138px;
+    height: 142px;
+    background: url(/static/images/ua.png) no-repeat;
+    background-size: 100%;
+
+} // ua-label

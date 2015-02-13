@@ -1,6 +1,7 @@
 .welcome {
     @include table;
     background-size: cover;
+    position: relative;
     .welcome-titles {
         box-sizing: border-box;
         @include table-cell;
@@ -24,5 +25,32 @@
             color: #fff;
             text-shadow: 1px 1px 3px black;
         } // h2
+        .scroll-down {
+            position: absolute;
+            display: inline-block;
+            width: 50px;
+            text-align: center;
+            bottom: 40px;
+            left: 50%;
+            margin-left: -25px;
+            color: #fff;
+            ul {
+                @include clear-list;
+                li {
+                    margin-top: -22px;
+                    opacity: .2;
+                    font-weight: 200;
+                    &:nth-child(1) {
+                        animation: ScrollDown 2.5s infinite 0s;
+                    }
+                    &:nth-child(2) {
+                        animation: ScrollDown 2.5s infinite .2s;
+                    }
+                    &:nth-child(3) {
+                        animation: ScrollDown 2.5s infinite .4s;
+                    }
+                } // li
+            } // ul
+        } // scroll-down
     } // welcome-titles
 } // welcome
