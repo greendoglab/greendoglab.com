@@ -28,6 +28,7 @@ header.site-header{
         position: relative;
         top: 15px;
         right: -10px;
+        @include transition(all, 0.5s, ease);
         &.shadows {
             color: #7ED321;
             text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
