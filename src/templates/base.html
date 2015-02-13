@@ -26,8 +26,8 @@
 <body>
 
 <header class="site-header">
-    <a href="/#/" class="menu-logo"></a>
-    <a href="/#/" class="green-word">GreenDogLab</a>
+    <a href="{{ url_for("index") }}" class="menu-logo"></a>
+    <a href="{{ url_for("index") }}" class="green-word">GreenDogLab</a>
 </header>
 
 {% block content %}
@@ -35,7 +35,7 @@
 
 <!-- aside -->
 <aside class="bit-title-line">
-    <a href="#" class="green-link" ng-hide="hideOrderLink">Order design or something else &rarr;</a>
+    <a href="mailto:miha@greendoglab.com" class="green-link" ng-hide="hideOrderLink">Order design or something else &rarr;</a>
 </aside>
 <!-- /aside -->
 
@@ -53,7 +53,7 @@
     <div  class="column">
         <ul>
             <li>+382 558-09-59</li>
-            <li>miha@greendoglab.com</li>
+            <li><a href="mailto:miha@greendoglab.com">miha@greendoglab.com</a></li>
         </ul>
     </div>
     <!-- /column -->

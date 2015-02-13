@@ -24,8 +24,8 @@
                         &:not(:last-of-type) {
                             &:after {
                                 content: ', ';
-                            }  
-                        } // после всех элементов списка, кроме последнего
+                            } // &:after
+                        } // add comma after each element, excluding last
                     } // li
                 } // tech
                 &.text-right {
@@ -52,6 +52,6 @@
 .poster {
     width: 100%;
     height: 300px;
-    background-size: cover !important; 
+    background-size: cover !important;
     background-position: 50% 50% !important;
 } // poster
