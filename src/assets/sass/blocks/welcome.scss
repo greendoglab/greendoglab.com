@@ -12,6 +12,9 @@
         font-family: 'PT Sans Narrow', sans-serif;
         text-align: center;
         @include box;
+        .tada {
+            animation: tada .5s ease-out 1;
+        } // animation-titles
         h1 {
             font-size: rem(50);
             text-transform: uppercase;
