@@ -65,30 +65,44 @@ module.exports = function(grunt) {
             main: {
                 files: [
                     {
-                        expand: true, 
+                        expand: true,
                         cwd: 'bower_components/normalize.css',
-                        src: ['normalize.css'], 
+                        src: ['normalize.css'],
                         dest: 'src/static/css/',
                         filter: 'isFile'
                     },
                     {
-                        expand: true, 
+                        expand: true,
                         cwd: 'bower_components/fontawesome/css',
-                        src: ['font-awesome.min.css'], 
+                        src: ['font-awesome.min.css'],
                         dest: 'src/static/css/',
                         filter: 'isFile'
                     },
                     {
-                        expand: true, 
+                        expand: true,
                         cwd: 'bower_components/fontawesome/fonts',
-                        src: ['*'], 
+                        src: ['*'],
                         dest: 'src/static/fonts/',
                         filter: 'isFile'
                     },
                     {
-                        expand: true, 
+                        expand: true,
+                        cwd: 'bower_components/octicons/octicons',
+                        src: [
+                            'octicons-local.ttf',
+                            'octicons.eot',
+                            'octicons.svg',
+                            'octicons.ttf',
+                            'octicons.woff',
+                            'octicons.css',
+                        ],
+                        dest: 'src/static/fonts/',
+                        filter: 'isFile'
+                    },
+                    {
+                        expand: true,
                         cwd: 'bower_components/jquery/dist',
-                        src: ['jquery.min.js','jquery.min.map'], 
+                        src: ['jquery.min.js','jquery.min.map'],
                         dest: 'src/static/js/',
                         filter: 'isFile'
                     },

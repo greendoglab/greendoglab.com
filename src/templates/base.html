@@ -12,6 +12,7 @@
 <!-- Render -->
 <link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/fonts/octicons.css">
 <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 <script src="/static/js/jquery.min.js"></script>
 <script src="/static/js/production.js"></script>
@@ -27,14 +28,14 @@
 
 <header class="site-header">
     <a href="{{ url_for("index") }}" class="menu-logo"></a>
-    <a href="{{ url_for("index") }}" class="green-word">GreenDogLab</a>
+    <a href="{{ url_for("index") }}" class="green-word {% block sitename_class %}{% endblock %}">GreenDogLab</a>
 </header>
 
 {% block content %}
 {% endblock content %}
 
 <!-- aside -->
-<aside class="bit-title-line">
+<aside class="big-title-line">
     <a href="mailto:miha@greendoglab.com" class="green-link" ng-hide="hideOrderLink">Order design or something else &rarr;</a>
 </aside>
 <!-- /aside -->

@@ -20,7 +20,7 @@
     </div>
 </div>
 <!-- aside -->
-<aside class="bit-title-line">
+<aside class="big-title-line">
     <h2>Something what we already did</h2>
 </aside>
 <!-- /aside -->
@@ -44,7 +44,8 @@
                 <ul>
                     {% if work.url %}<li><a href="{{ work.url }}" class="fa fa-external-link"></a></li>{% endif %}
                     {% if work.repo %}<li><a href="{{ work.repo }}" class="fa fa-github"></a></li>{% endif %}
-                    {% if work.details %}<li><a href="{{ url_for("page", path=work.path) }}">details</a></li>{% endif %}
+                    <!-- {% if work.details %}<li><a href="{{ url_for("page", path=work.path) }}">details</a></li>{% endif %} -->
+                    <li><a href="{{ url_for("page", path=work.path) }}">details</a></li>
                 </ul>
             </div>
         </div>
