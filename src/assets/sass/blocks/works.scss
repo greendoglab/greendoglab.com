@@ -12,8 +12,14 @@
             // background: #7ED321;
             font-family: 'PT Sans Narrow', sans-serif;
             padding: 20px;
+            padding-bottom: 60px;
+            position: relative;
             .info-block {
                 color: #363636;
+                &.down {
+                    position: absolute;
+                    bottom: 10px;
+                } // down
                 h2 {
                     margin: 0;
                     font-size: rem(26);
