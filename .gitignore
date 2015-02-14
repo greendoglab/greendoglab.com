@@ -9,6 +9,8 @@ src/static/*
 
 src/assets/css
 
+production
+
 # os x
 .DS_Store
 *~
