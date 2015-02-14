@@ -29,14 +29,18 @@
             text-shadow: 1px 1px 3px black;
         } // h2
         .scroll-down {
+            display: none;
             position: absolute;
-            display: inline-block;
             width: 50px;
             text-align: center;
             bottom: 40px;
             left: 50%;
             margin-left: -25px;
             color: #fff;
+            &.active {
+                animation: scrollDownBox 1s ease-out 1;
+                display: inline-block;
+            } // &.active
             ul {
                 @include clear-list;
                 li {

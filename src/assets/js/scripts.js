@@ -63,8 +63,16 @@
         });
     }
 
+    function scrollDownShow() {
+        var elem = $('.scroll-down');
+        setTimeout(function() {
+            elem.addClass('active');
+        }, 800);
+    }
+
     // document ready
     $(window).on('load', function() {
+        scrollDownShow();
         RandomBack();
         Welcome();
     });
