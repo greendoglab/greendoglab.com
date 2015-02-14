@@ -12,7 +12,6 @@
 
     function RandomBack() {
         var images = [
-            'back1.jpg',
             'back2.jpg',
             'back4.jpg',
             'back6.jpg',
