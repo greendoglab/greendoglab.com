@@ -63,10 +63,37 @@
         });
     }
 
+    function scrollDownShow() {
+        var elem = $('.scroll-down');
+        setTimeout(function() {
+            elem.addClass('active');
+        }, 800);
+    }
+
+    function animateElements() {
+        var ANIMATION_CLASS = 'state';
+        $(window).on('scroll', function() {
+            var scrollPos = $(this).scrollTop() + $(this).height() - 20;
+
+            $('[data-role="animate-scroll"]').each(function() {
+                var el = $(this);
+                // console.log(el, el.offset().top, scrollPos);
+                if (scrollPos >= el.offset().top && !el.hasClass(ANIMATION_CLASS)) {
+                    el.addClass(ANIMATION_CLASS);
+                }
+                if (scrollPos < el.offset().top && el.hasClass(ANIMATION_CLASS)) {
+                    el.removeClass(ANIMATION_CLASS);
+                }
+            });
+        });
+    }
+
     // document ready
     $(window).on('load', function() {
         RandomBack();
         Welcome();
+        scrollDownShow();
+        animateElements();
     });
 
     // all initial on window resize
