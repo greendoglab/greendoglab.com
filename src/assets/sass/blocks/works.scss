@@ -91,13 +91,24 @@
                 padding: 20px;
                 .icon-green {
                     @include inline-middle;
+                    padding: 8px 14px 4px 14px;
+                    background: rgb(182, 230, 133);
+                    color: white;
+                    border-radius: 3px;
                     .octicon {
                         font-size: 1.2em;
                     }
                 } // icon-green
                 .stat-value {
                     @include inline-middle;
+                    font-weight: 700;
+                    font-size: 1.2em;
                 } // stat-value
+                .stat-name {
+                    @include inline-middle;
+                    color: rgb(186, 186, 186);
+                    font-size: .8em;
+                } // stat-name
                 .device {
                     @include inline-middle;
                     &.desktop {
