@@ -66,6 +66,12 @@
     box-sizing: border-box;
 }
 
+@mixin box-small {
+    padding-left: 180px;
+    padding-right: 180px;
+    box-sizing: border-box;
+}
+
 @mixin bp($point) {
     $bp-xs: "(min-width : 480px)";
     $bp-sm: "(min-width : 768px)";
