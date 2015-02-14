@@ -1,4 +1,4 @@
-title: Oberig Clinic
+title: Oberig – Intelligent healthcare
 date: 2013-09-01
 order: 2
 tech: [html, css, django, MySQL, jquery, ajax, nginx]
