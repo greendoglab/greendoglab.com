@@ -1,0 +1,19 @@
+.single-content {
+    @include box-small;
+    margin-top: 120px;
+    > header {
+        margin-top: 40px;
+        h1 {
+            margin: 0;
+            margin-bottom: 10px;
+        } // h1
+    } // > header
+    .big-title-line {
+        text-align: center;
+    } // big-title-line
+    > article {
+        > h1, h2, h3, h4, h5, h6 {
+            text-align: center;
+        } // > h1, h2, h3, h4, h5, h6
+    } // > article
+} // single-content

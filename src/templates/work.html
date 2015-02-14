@@ -1,7 +1,79 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-    {{ work.title }}
+<!-- content -->
+<div class="single-content single-work">
+    <div class="poster" style="background: url({{ work.poster }});"></div>
+    <header class="big-title-line">
+        <h1>{{ work.title }}</h1>
+        <ul class="tech">
+            <li class="tech-title">Technology:</li>
+            {% for tech in work.tech %}
+                <li>{{ tech }}</li>
+            {% endfor %}
+        </ul>
+    </header>
+    <!-- front-end -->
+    {% if work.show_stats %}
+    <div class="blocks">
+        <div class="big-title-line">
+            <h2>Responsive front-end</h2>
+        </div>
+        <div class="blocks-content">
+            {% if work.stat_developers %}
+            <div class="blocks-item">
+                <span class="icon-green">
+                    <span class="octicon octicon-organization"></span>
+                </span>
+                <span class="stat-value">{{ work.stat_developers }}</span>
+                <div class="stat-name">developers</div>
+            </div>
+            {% endif %}
+            {% if work.stat_commits %}
+            <div class="blocks-item">
+                <span class="icon-green">
+                    <span class="octicon octicon-git-commit"></span>
+                </span>
+                <span class="stat-value">{{ work.stat_commits }}</span>
+                <div class="stat-name">commits</div>
+            </div>
+            {% endif %}
+            {% if work.stat_lines %}
+            <div class="blocks-item">
+                <span class="icon-green">
+                    <span class="octicon octicon-code"></span>
+                </span>
+                <span class="stat-value">{{ work.stat_lines }}</span>
+                <div class="stat-name">lines of code</div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <!-- /front-end -->
+    {% endif %}
+    {% if work.front_adaptive %}
+    <!-- front-end -->
+    <div class="blocks">
+        <div class="big-title-line">
+            <h2>Responsive front-end</h2>
+        </div>
+        <div class="blocks-content">
+            <div class="blocks-item">
+                <div class="device desktop"></div>
+            </div>
+            <div class="blocks-item">
+                <div class="device tablet"></div>
+            </div>
+            <div class="blocks-item">
+                <div class="device mobile"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /front-end -->
+    {% endif %}
+    <article>
+        {{ work.html|safe }}
+    </article>
 </div>
+<!-- /content -->
 {% endblock content %}

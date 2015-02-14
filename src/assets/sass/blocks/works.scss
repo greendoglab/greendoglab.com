@@ -59,3 +59,70 @@
     background-position: 50% 50% !important;
     background-repeat: no-repeat !important;
 } // poster
+
+.single-work {
+    animation: fadeIn 1.5s ease-out 1;
+    .tech {
+        margin: 0;
+        font-size: rem(22);
+        padding: 0;
+        li {
+            display: inline-block;
+            &:not(:last-of-type) {
+                &:after {
+                    content: ', ';
+                } // &:after
+            } // add comma after each element, excluding last
+            &.tech-title {
+                font-weight: bold;
+                &:after {
+                    content: '';
+                } // &:after
+            } // &.tech-title
+        } // li
+    } // tech
+    .blocks {
+        .blocks-content {
+            @include table;
+            .blocks-item {
+                @include table-cell;
+                text-align: center;
+                vertical-align: middle;
+                padding: 20px;
+                .icon-green {
+                    @include inline-middle;
+                    .octicon {
+                        font-size: 1.2em;
+                    }
+                } // icon-green
+                .stat-value {
+                    @include inline-middle;
+                } // stat-value
+                .device {
+                    @include inline-middle;
+                    &.desktop {
+                        width: calc(314px/2);
+                        height: calc(250px/2);
+                        background-image: url(/static/images/desktop.png);
+                        background-size: calc(314px/2) auto;
+                        background-repeat: no-repeat;
+                    } // &.desktop
+                    &.tablet {
+                        width: calc(140px/2);
+                        height: calc(183px/2);
+                        background-image: url(/static/images/tablet.png);
+                        background-size: calc(140px/2) auto;
+                        background-repeat: no-repeat;
+                    } // &.tablet
+                    &.mobile {
+                        width: calc(72px/2);
+                        height: calc(144px/2);
+                        background-image: url(/static/images/mobile.png);
+                        background-size: calc(72px/2) auto;
+                        background-repeat: no-repeat;
+                    } // &.mobile
+                } // device
+            } // blocks-item
+        } // blocks-content
+    } // blocks
+} // single-work
