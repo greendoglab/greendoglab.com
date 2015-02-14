@@ -13,7 +13,12 @@
             {% endfor %}
         </ul>
     </header>
-    <!-- front-end -->
+    <div class="info-block">
+        <ul>
+            {% if work.url %}<li><a href="{{ work.url }}">website <i class="fa fa-external-link"></i></a></li>{% endif %}
+            {% if work.repo %}<li><a href="{{ work.repo }}">repo <i class="fa fa-github"></i></a></li>{% endif %}
+        </ul>
+    </div>
     {% if work.show_stats %}
     <div class="blocks">
         <div class="big-title-line">

@@ -35,11 +35,8 @@
                     text-align: right;
                 } // &.text-right
                 ul {
-                    list-style: none;
-                    margin: 0;
-                    padding: 0;
+                    @include clear-list-inline;
                     li {
-                        display: inline-block;
                         a {
                             text-decoration: none;
                             color: black;
@@ -81,6 +78,19 @@
             } // &.tech-title
         } // li
     } // tech
+    .info-block {
+        text-align: center;
+        ul {
+            @include clear-list-inline;
+            li {
+                a {
+                    text-decoration: none;
+                    color: black;
+                    padding-right: 20px;
+                } // a
+            } // li
+        }
+    } // info-block
     .blocks {
         .blocks-content {
             @include table;
