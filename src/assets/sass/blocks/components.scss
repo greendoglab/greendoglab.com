@@ -3,11 +3,11 @@
     opacity: 1;
 }
 
-aside.bit-title-line {
+.big-title-line {
     @include box;
     margin: 45px 0;
     // padding: 10px 0;
-    h2, .green-link {
+    h1, h2, .green-link {
         display: block;
         font-size: rem(50);
         text-decoration: none;
@@ -15,7 +15,7 @@ aside.bit-title-line {
         color: #7ED321;
         font-family: 'PT Sans Narrow', sans-serif;
     } // h2, .green-link
-    h2 {
+    h1, h2 {
         color: #363636;
     } // h2
 } // aside
