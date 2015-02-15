@@ -7,8 +7,8 @@ url: http://oberig.ua/en/
 front_adaptive: true
 show_stats: true
 stat_developers: 2
-stat_commits: 89
-stat_lines: 1200
+stat_commits: 84
+stat_lines: 85К
 
 ## We glad to say thanks!
 
