@@ -1,15 +1,13 @@
 .site-footer {
     padding: 40px 0;
-    @include clearfix;
     font-size: rem(18);
     @include box;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
     .column {
-        display: block;
-        width: calc(25% - 10px);
         color: #b5b5b5;
-        float: left;
-        padding-left: 5px;
-        padding-right: 5px;
+        flex: 1 25%;
         ul {
             @include clear-list;
         } // ul

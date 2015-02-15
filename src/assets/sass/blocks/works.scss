@@ -2,14 +2,12 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    // margin: 100px 0;
     .work {
         flex: 1 33.3333%;
         &.state {
             animation: fadeIn 1s ease-out 1;
         } // &.state
         .work-info {
-            // background: #7ED321;
             font-family: 'PT Sans Narrow', sans-serif;
             padding: 20px;
             padding-bottom: 60px;
@@ -19,7 +17,7 @@
                 &.down {
                     position: absolute;
                     bottom: 10px;
-                } // down
+                } // &.down
                 h2 {
                     margin: 0;
                     font-size: rem(26);
