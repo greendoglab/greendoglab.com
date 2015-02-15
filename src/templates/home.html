@@ -24,6 +24,7 @@
     <h2>Something what we already did</h2>
 </aside>
 <!-- /aside -->
+
 <!-- works -->
 <div class="works">
 {% for work in works %}
@@ -40,7 +41,7 @@
                 {% endfor %}
                 </ul>
             </div>
-            <div class="info-block">
+            <div class="info-block down">
                 <ul>
                     {% if work.url %}<li><a href="{{ work.url }}" class="fa fa-external-link"></a></li>{% endif %}
                     {% if work.repo %}<li><a href="{{ work.repo }}" class="fa fa-github"></a></li>{% endif %}
