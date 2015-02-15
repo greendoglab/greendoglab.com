@@ -9,8 +9,3 @@ show_stats: true
 stat_developers: 4
 stat_commits: 276
 stat_lines: 161К
-
-## We glad to say thanks!
-
-Thanks Oberig Clinic for trust. Thanks to Maxim Bilozerov for work hard together! Tnahks to kiselev.ua for awesome design.
-
