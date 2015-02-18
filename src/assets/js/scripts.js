@@ -46,13 +46,12 @@
     // site functions
     function RandomBack() {
         var images = [
-            'back2.jpg',
-            'back4.jpg',
-            'back6.jpg',
-            'back7.jpg',
+            'back3.jpg', // sea
+            'back6.jpg', // sea
+            'back9.jpg', // mountians
         ];
 
-        $('.welcome').css({'background-image': 'url(/static/images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+        $('.welcome').css({'background-image': 'url(/static/images/home/' + images[Math.floor(Math.random() * images.length)] + ')'});
     }
 
     function Welcome() {
@@ -61,7 +60,7 @@
             var scrollPos = $(this).scrollTop();
             var windowHeight = $(window).height();
             // siteName
-            var siteName = $('.green-word');
+            var siteName = $('.site-header');
             // fade & parallax
             var fadeStart=windowHeight/6;
             var fadeUntil=windowHeight/2;
@@ -69,11 +68,10 @@
 
             // siteName action
             if (scrollPos >= (windowHeight-100)) {
-                console.log('sucsess');
-                siteName.addClass('shadows');
+                siteName.addClass('state');
             }
             else {
-                siteName.removeClass('shadows');
+                siteName.removeClass('state');
             }
 
             // parallax action
