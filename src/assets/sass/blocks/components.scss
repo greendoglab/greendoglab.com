@@ -20,10 +20,18 @@
     } // h2
 } // aside
 
+
+.ua-label-box {
+    text-align: center;
+    @include box;
+    padding-top: 0px;
+    padding-bottom: 50px;
+} // ua-label-box
+
 .ua-label {
     @include inline-middle;
-    width: 138px;
-    height: 142px;
+    width: 196px;
+    height: 60px;
     background: url(/static/images/ua.png) no-repeat;
     background-size: 100%;
 } // ua-label
