@@ -15,19 +15,33 @@
         .tada {
             animation: tada .5s ease-out 1;
         } // animation-titles
+        .big-logo {
+            @include inline-middle;
+            width: 170px;
+            height: 89px;
+            background: url(/static/images/LogoBig.png) no-repeat;
+            background-size: 100%;
+            margin-bottom: 30px;
+        } // big-logo
         h1 {
             font-size: rem(50);
-            text-transform: uppercase;
             margin: 0;
             text-shadow: 1px 1px 3px black;
             color: #82e94a;
         } // h1
         h2 {
-            padding-top: 10px;
+            margin-bottom: 30px;
             font-size: rem(40);
             color: #fff;
             text-shadow: 1px 1px 3px black;
         } // h2
+        .homepage-article {
+            font-family: 'PT Sans', serif;
+            color: #fff;
+            p {
+                margin: 0;
+            } // p
+        } // homepage-article
         .scroll-down {
             display: none;
             position: absolute;
