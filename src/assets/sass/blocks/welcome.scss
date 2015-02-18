@@ -21,16 +21,17 @@
             height: 89px;
             background: url(/static/images/LogoBig.png) no-repeat;
             background-size: 100%;
-            margin-bottom: 30px;
         } // big-logo
         h1 {
             font-size: rem(50);
             margin: 0;
             text-shadow: 1px 1px 3px black;
             color: #27ae60;
+            text-shadow: 2px 3px 0 #515151, 6px 6px 0 rgba(255, 255, 255, 0.34);
+            margin-bottom: 30px;
         } // h1
         h2 {
-            margin-bottom: 30px;
+            margin-bottom: 0;
             font-size: rem(40);
             color: #fff;
             text-shadow: 1px 1px 3px black;
@@ -38,6 +39,7 @@
         .homepage-article {
             font-family: 'PT Sans', serif;
             color: #fff;
+            text-shadow: 1px 1px 3px black;
             p {
                 margin: 0;
             } // p
