@@ -27,9 +27,9 @@
 <body>
 
 <!-- header -->
-<header class="site-header">
+<header class="site-header {% block header_class %}{% endblock %}">
     <a href="{{ url_for("index") }}" class="menu-logo"></a>
-    <a href="{{ url_for("index") }}" class="green-word {% block sitename_class %}{% endblock %}">GreenDogLab</a>
+    <a href="{{ url_for("index") }}" class="green-word">GreenDogLab</a>
 </header>
 <!-- /header -->
 

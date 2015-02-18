@@ -1,5 +1,5 @@
 header.site-header {
-    animation: bounceInDown 1s ease-out 1;
+    opacity: 0;
     position: fixed;
     z-index: 1;
     width: 100%;
@@ -8,6 +8,11 @@ header.site-header {
     padding-top: 18px;
     box-sizing: border-box;
     @include box;
+    @include transition(all, 0.5s, ease);
+    &.state, &.in-page {
+        animation: bounceInDown 1s ease-out 1;
+        opacity: 1;
+    } // &.state, &.in-page
     a.menu-logo {
         @include inline-middle;
         background-image: url(/static/images/Logo2.png);
@@ -31,11 +36,6 @@ header.site-header {
         top: 15px;
         right: -10px;
         @include transition(all, 0.5s, ease);
-        &.shadows {
-            text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
-        } // &.shadows
-        &.always-shadows {
-            text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
-        } // always-shadows
+        text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
     } // green-word
 } // site-header
