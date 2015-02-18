@@ -6,7 +6,7 @@
     .work {
         flex: 1 33.3333%;
         &.state {
-            animation: fadeIn 1s ease-out 1;
+            animation: inUp 0.5s ease-out 1;
         } // &.state
         .work-info {
             font-family: 'PT Sans Narrow', sans-serif;
@@ -76,7 +76,7 @@
 } // poster
 
 .single-work {
-    animation: fadeIn 1.5s ease-out 1;
+    animation: inUp 0.5s ease-out 1;
     .tech {
         margin: 0;
         font-size: rem(22);
