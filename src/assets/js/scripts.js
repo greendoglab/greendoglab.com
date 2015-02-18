@@ -43,17 +43,6 @@
         });
     }
 
-    // site functions
-    function RandomBack() {
-        var images = [
-            'back3.jpg', // sea
-            'back6.jpg', // sea
-            'back9.jpg', // mountians
-        ];
-
-        $('.welcome').css({'background-image': 'url(/static/images/home/' + images[Math.floor(Math.random() * images.length)] + ')'});
-    }
-
     function Welcome() {
 
         $(window).on('scroll', function() {
@@ -122,7 +111,6 @@
     // document ready
     $(window).on('load', function() {
         equalheight('.works .work .work-info');
-        RandomBack();
         Welcome();
         scrollDownShow();
         animateElements();
