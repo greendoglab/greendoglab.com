@@ -48,7 +48,6 @@
         var images = [
             'back3.jpg', // sea
             'back6.jpg', // sea
-            'back8.jpg', // sea
             'back9.jpg', // mountians
         ];
 
