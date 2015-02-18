@@ -32,23 +32,25 @@
 {% for work in works %}
     <!-- work -->
     <div class="work" data-role="animate-scroll">
-        <div class="poster" style="background: url({{ work.poster }});"></div>
         <!-- work-info -->
         <div class="work-info">
-            <div class="info-block">
-                <h2>{{ work.title }}</h2>
-                <ul class="tech">
-                {% for tech in work.tech %}
-                    <li>{{ tech }}</li>
-                {% endfor %}
-                </ul>
-            </div>
+            <a href="{{ url_for("page", path=work.path) }}" class="work-url">
+                <div class="poster" style="background: url({{ work.poster }});"></div>
+                <div class="info-block">
+                    <h2>{{ work.title }}</h2>
+                    <ul class="tech">
+                    {% for tech in work.tech %}
+                        <li>{{ tech }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </a>
             <div class="info-block down">
                 <ul>
-                    {% if work.url %}<li><a href="{{ work.url }}" class="fa fa-external-link"></a></li>{% endif %}
-                    {% if work.repo %}<li><a href="{{ work.repo }}" class="fa fa-github"></a></li>{% endif %}
+                    {% if work.url %}<li><a href="{{ work.url }}"><i class="fa fa-external-link"></i></a></li>{% endif %}
+                    {% if work.repo %}<li><a href="{{ work.repo }}"><i class="fa fa-github"></i></a></li>{% endif %}
                     <!-- {% if work.details %}<li><a href="{{ url_for("page", path=work.path) }}">details</a></li>{% endif %} -->
-                    <li><a href="{{ url_for("page", path=work.path) }}">details</a></li>
+                    <!-- <li><a href="{{ url_for("page", path=work.path) }}">details</a></li> -->
                 </ul>
             </div>
         </div>
