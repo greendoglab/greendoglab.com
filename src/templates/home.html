@@ -35,8 +35,7 @@
     <div class="work" data-role="animate-scroll">
         <!-- work-info -->
         <div class="work-info">
-            <a href="{{ url_for("page", path=work.path) }}" class="work-url">
-                <div class="poster" style="background: url({{ work.poster }});"></div>
+            <div class="work-url">
                 <div class="info-block">
                     <h2>{{ work.title }}</h2>
                     <ul class="tech">
@@ -45,13 +44,11 @@
                     {% endfor %}
                     </ul>
                 </div>
-            </a>
-            <div class="info-block down">
+            </div>
+            <div class="info-block down external">
                 <ul>
                     {% if work.url %}<li><a href="{{ work.url }}"><i class="fa fa-external-link"></i></a></li>{% endif %}
                     {% if work.repo %}<li><a href="{{ work.repo }}"><i class="fa fa-github"></i></a></li>{% endif %}
-                    <!-- {% if work.details %}<li><a href="{{ url_for("page", path=work.path) }}">details</a></li>{% endif %} -->
-                    <!-- <li><a href="{{ url_for("page", path=work.path) }}">details</a></li> -->
                 </ul>
             </div>
         </div>

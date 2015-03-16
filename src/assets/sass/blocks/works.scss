@@ -45,9 +45,11 @@
                 } // &.text-right
                 ul {
                     @include clear-list-inline;
-                    li + li {
-                        margin-right: 20px;
-                    }
+                    &.external {
+                        li + li {
+                            margin-right: 20px;
+                        }
+                    } // external
                     li {
                         a {
                             @include inline-middle;
