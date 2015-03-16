@@ -45,11 +45,15 @@
                 } // &.text-right
                 ul {
                     @include clear-list-inline;
+                    li + li {
+                        margin-right: 20px;
+                    }
                     li {
                         a {
+                            @include inline-middle;
+                            line-height: 1.4;
                             text-decoration: none;
                             color: white;
-                            margin-right: 20px;
                             background: #f1c40f;
                             padding: 3px 6px;
                             border-radius: 4px;
