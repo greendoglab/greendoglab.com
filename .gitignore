@@ -4,6 +4,8 @@ node_modules
 bower_components
 .ideas
 
+*pyc
+
 src/static/*
 !src/static/files
 
