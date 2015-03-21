@@ -3,6 +3,7 @@
 
 import sys
 
+import json
 from flask import Flask, render_template, url_for, request
 from flask_flatpages import FlatPages
 from datetime import date, datetime
@@ -10,11 +11,13 @@ from pagination import Pagination
 from flask_frozen import Freezer
 import markdown
 
+import os
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+
 # config
-DEBUG = True
+DEBUG = False
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_MARKDOWN_EXTENSIONS = ['nl2br', 'tables', 'attr_list', 'extra']
-
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
 WORKS_DIR = 'works'
@@ -63,14 +66,13 @@ def make_external(url):
 # views
 @app.route('/')
 def index():
+    json_file = open(os.path.join(os.path.dirname(__file__), "content", "works.json"), "r")
+    works = json.load(json_file)
     page = pages.get('pages/index')
-    works = get_posts(WORKS_DIR, 'order')[:3]
-    estis = get_posts(ESTI_DIR, 'date')[:3]
     return render_template(
-            'home.html', 
-            page = page, 
-            works = works,
-            estis = estis
+            'home.html',
+            page = page,
+            works = works
     )
 
 # single page
@@ -100,4 +102,4 @@ if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "build":
         freezer.freeze()
     else:
-        app.run(port=8000)
+        app.run(port=8000, debug=True)
