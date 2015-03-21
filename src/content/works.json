@@ -10,7 +10,6 @@
             "ajax",
             "nginx"
         ],
-        "url": "http://isida.ua",
         "show_stats": true,
         "stat_developers": "4",
         "stat_commits": "276",
@@ -33,7 +32,6 @@
             "ajax",
             "nginx"
         ],
-        "url": "http://isida.ua",
         "show_stats": true,
         "stat_developers": "2",
         "stat_commits": "84",
@@ -69,6 +67,25 @@
             {
                 "type": "repo",
                 "url": "https://github.com/greendoglab/love2travel"
+            }
+        ]
+    },
+    {
+        "title": "Waterfilter online shop",
+        "tech": [
+            "design",
+            "html",
+            "css",
+            "jquery"
+        ],
+        "show_stats": true,
+        "stat_developers": "2",
+        "stat_commits": "84",
+        "stat_lines": "85К",
+        "links": [
+            {
+                "type": "repo",
+                "url": "https://github.com/greendoglab/waterfilter"
             }
         ]
     }
