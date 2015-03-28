@@ -47,21 +47,11 @@
             </div>
             {% if work.links %}
                 <div class="info-block down external">
-                    <ul>
+                    <ul class="external">
                         {% for link in work.links %}
                             <li>
-                                <a href="{{ link.url }}" target="_blank">
-                                    {% if link.type %}
-                                        {% if link.type == "repo" %}
-                                            <i class="fa fa-github"></i>
-                                        {% else %}
-                                            {% if link.type == "link" %}
-                                                <i class="fa fa-external-link"></i>
-                                            {% else %}
-                                                {{ link.type }}
-                                            {% endif %}
-                                        {% endif %}
-                                    {% endif %}
+                                <a href="{{ link.url }}" target="_blank" {% if link.icon %}class="icon {{ link.icon }}"{% endif %}>
+                                    {{ link.text }}
                                 </a>
                             </li>
                         {% endfor %}

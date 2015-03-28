@@ -5,6 +5,7 @@
     margin-bottom: 120px;
     .work {
         flex: 1 33.3333%;
+        margin-bottom: 1em;
         &.state {
             animation: inUp 0.5s ease-out 1;
         } // &.state
@@ -47,23 +48,49 @@
                     @include clear-list-inline;
                     &.external {
                         li + li {
-                            margin-right: 20px;
+                            margin-left: 10px;
                         }
+                        li {
+                            a {
+                                font-size: rem(18);
+                                &.icon {
+                                    @include inline-middle;
+                                    &:before {
+                                        @include inline-middle;
+                                        font: normal normal normal 14px/1 FontAwesome;
+                                        font-size: inherit;
+                                        text-rendering: auto;
+                                        -webkit-font-smoothing: antialiased;
+                                        -moz-osx-font-smoothing: grayscale;
+                                        transform: translate(0, 0);
+                                        font-size: rem(14);
+                                    } // &:before
+                                    &.link {
+                                        &:before {
+                                            content: '\f08e';
+                                        } // &:before
+                                    } // &.link
+                                    &.repo {
+                                        &:before {
+                                            content: '\f09b';
+                                        } // &:before
+                                    } // &.repo
+                                    &.pin {
+                                        &:before {
+                                            content: '\f231';
+                                        } // &:before
+                                    } // &.pin
+                                } // &.icon
+                            } // a
+                        } // li
                     } // external
                     li {
                         a {
                             @include inline-middle;
                             line-height: 1.4;
                             text-decoration: none;
-                            color: white;
-                            background: #f1c40f;
-                            padding: 3px 6px;
-                            border-radius: 4px;
-                            .fa-external-link {
-                                position: relative;
-                                top: 2px;
-                                right: -1px;
-                            }
+                            color: #27ae60;
+                            padding: 1px 2px;
                         } // a
                     } // li
                 } // ul
