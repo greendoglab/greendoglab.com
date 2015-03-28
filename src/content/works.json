@@ -1,23 +1,30 @@
 [
     {
-        "title": "Isida – Woman health",
+        "title": "Love 2 Travel – exotic wedding agency in Kiev",
         "tech": [
+            "design",
             "html",
             "css",
             "django",
-            "MySQL",
             "jquery",
             "ajax",
-            "nginx"
+            "custom font"
         ],
+        "url": "http://isida.ua",
         "show_stats": true,
-        "stat_developers": "4",
-        "stat_commits": "276",
-        "stat_lines": "161К",
+        "stat_developers": "2",
+        "stat_commits": "84",
+        "stat_lines": "85К",
         "links": [
             {
-                "type": "link",
-                "url": "http://isida.ua"
+                "icon": "link",
+                "text": "website in archive",
+                "url": "http://web.archive.org/web/20141218165458/http://love2travel.com.ua/"
+            },
+            {
+                "icon": "repo",
+                "text": "sources",
+                "url": "https://github.com/greendoglab/love2travel"
             }
         ]
     },
@@ -38,35 +45,32 @@
         "stat_lines": "85К",
         "links": [
             {
-                "type": "link",
+                "icon": "link",
+                "text": "website",
                 "url": "http://oberig.ua/en/"
             }
         ]
     },
     {
-        "title": "Love 2 Travel – exotic wedding agency in Kiev",
+        "title": "Isida – Woman health",
         "tech": [
-            "design",
             "html",
             "css",
             "django",
+            "MySQL",
             "jquery",
             "ajax",
-            "custom font"
+            "nginx"
         ],
-        "url": "http://isida.ua",
         "show_stats": true,
-        "stat_developers": "2",
-        "stat_commits": "84",
-        "stat_lines": "85К",
+        "stat_developers": "4",
+        "stat_commits": "276",
+        "stat_lines": "161К",
         "links": [
             {
-                "type": "link",
-                "url": "http://web.archive.org/web/20141218165458/http://love2travel.com.ua/"
-            },
-            {
-                "type": "repo",
-                "url": "https://github.com/greendoglab/love2travel"
+                "icon": "link",
+                "text": "website",
+                "url": "http://isida.ua"
             }
         ]
     },
@@ -84,7 +88,8 @@
         "stat_lines": "85К",
         "links": [
             {
-                "type": "repo",
+                "icon": "repo",
+                "text": "markup sources",
                 "url": "https://github.com/greendoglab/waterfilter"
             }
         ]

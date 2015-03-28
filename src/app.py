@@ -67,6 +67,7 @@ def make_external(url):
 def index():
     json_file = open(os.path.join(os.path.dirname(__file__), "content", "works.json"), "r")
     works = json.load(json_file)
+    works.reverse()
     page = pages.get('pages/index')
     return render_template(
             'home.html',
