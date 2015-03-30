@@ -14,6 +14,12 @@
         text-align: center;
         color: #27ae60;
         font-family: 'PT Sans Narrow', sans-serif;
+        @include bp (xs) {
+            line-height: 1.1;
+        } // xs
+        @include bp (sm) {
+            line-height: 1.1;
+        } // sm
     } // h2, .green-link
     h1, h2 {
         color: #363636;
