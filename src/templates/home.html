@@ -22,48 +22,5 @@
         </div>
     </div>
 </div>
-<!-- aside -->
-<aside class="big-title-line">
-    <h2>Something what we already did</h2>
-</aside>
-<!-- /aside -->
-
-<!-- works -->
-<div class="works">
-{% for work in works %}
-    <!-- work -->
-    <div class="work" data-role="animate-scroll">
-        <!-- work-info -->
-        <div class="work-info">
-            <div class="work-url">
-                <div class="info-block">
-                    <h2>{{ work.title }}</h2>
-                    <ul class="tech">
-                    {% for tech in work.tech %}
-                        <li>{{ tech }}</li>
-                    {% endfor %}
-                    </ul>
-                </div>
-            </div>
-            {% if work.links %}
-                <div class="info-block down external">
-                    <ul class="external">
-                        {% for link in work.links %}
-                            <li>
-                                <a href="{{ link.url }}" target="_blank" {% if link.icon %}class="icon {{ link.icon }}"{% endif %}>
-                                    {{ link.text }}
-                                </a>
-                            </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            {% endif %}
-        </div>
-        <!-- /work-info -->
-    </div>
-    <!-- /work -->
-{% endfor %}
-</div>
-<!-- /works -->
 
 {% endblock content %}
