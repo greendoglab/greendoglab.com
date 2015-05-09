@@ -1,41 +1,68 @@
 header.site-header {
-    opacity: 0;
+    @include clearfix;
+    background-color: white;
     position: fixed;
     z-index: 1;
     width: 100%;
-    height: 100px;
+    height: 78px;
     top: 0px;
-    padding-top: 18px;
+    padding-top: 8px;
     box-sizing: border-box;
+    border-bottom: 1px solid transparent;
     @include box;
-    @include transition(all, 0.5s, ease);
-    &.state, &.in-page {
-        animation: bounceInDown 1s ease-out 1;
-        opacity: 1;
-    } // &.state, &.in-page
-    a.menu-logo {
-        @include inline-middle;
-        background-image: url(/static/images/Logo2.png);
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        background-size: 100%;
-        width: 114px;
-        height: 60px;
+    @include transition(all, 0.8s, ease);
+    .logo-block {
+        @include clearfix;
         float: left;
-    } // menu-logo
-    a.green-word {
-        @include inline-middle;
-        color: #27ae60;
-        font-family: 'PT Sans Narrow', sans-serif;
-        font-size: rem(48);
-        z-index: 3;
-        font-weight: 400;
-        text-decoration: none;
-        display: block;
-        position: relative;
-        top: 15px;
-        right: -10px;
-        @include transition(all, 0.5s, ease);
-        text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
-    } // green-word
+        @include transition(all, 0.8s, ease);
+        opacity: 0;
+        &.state {
+            opacity: 1;
+        } // &.state
+        a.menu-logo {
+            @include inline-middle;
+            background-image: url(/static/images/Logo2.png);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            background-size: 100%;
+            width: 114px;
+            height: 60px;
+            float: left;
+            &.state, &.in-page {
+                height: 100px;
+                opacity: 1;
+            } // &.state, &.in-page
+        } // menu-logo
+        a.green-word {
+            float: left;
+            @include inline-middle;
+            color: #27ae60;
+            font-family: 'PT Sans Narrow', sans-serif;
+            font-size: rem(48);
+            z-index: 3;
+            font-weight: 400;
+            text-decoration: none;
+            display: block;
+            position: relative;
+            top: 15px;
+            right: -10px;
+            @include transition(all, 0.5s, ease);
+            text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
+        } // green-word
+    } // logo-block
+    .site-menu {
+        @include clear-list-inline;
+        float: right;
+        margin-top: 13px;
+        li + li {
+            margin-left: 10px;
+        } // li
+        li {
+            font-size: rem(18);
+            a {
+                font-family: 'PT Sans Narrow', sans-serif;
+                text-decoration: none;
+            } // a
+        } // li
+    } // site-menu
 } // site-header

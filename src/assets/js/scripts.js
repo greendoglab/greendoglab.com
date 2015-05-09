@@ -43,25 +43,31 @@
         });
     }
 
-    function Welcome() {
+    function header() {
+        var windowHeight = $(window).height();
+        var logoBlock = $('.logo-block');
 
         $(window).on('scroll', function() {
             var scrollPos = $(this).scrollTop();
-            var windowHeight = $(window).height();
-            // siteName
-            var siteName = $('.site-header');
-            // fade & parallax
-            var fadeStart=windowHeight/6;
-            var fadeUntil=windowHeight/2;
-            var elem = $('[data-type="parallax"]');
 
-            // siteName action
-            if (scrollPos >= (windowHeight-100)) {
-                siteName.addClass('state');
+            if (scrollPos >= (100)) {
+                logoBlock.addClass('state');
             }
             else {
-                siteName.removeClass('state');
+                logoBlock.removeClass('state');
             }
+        });
+    }
+
+    function Welcome() {
+        var windowHeight = $(window).height();
+        // fade & parallax
+        var fadeStart=windowHeight/6;
+        var fadeUntil=windowHeight/2;
+        var elem = $('[data-type="parallax"]');
+
+        $(window).on('scroll', function() {
+            var scrollPos = $(this).scrollTop();
 
             // parallax action
             elem.each(function(){
@@ -71,7 +77,6 @@
                 var offset = $(window).scrollTop();
                 var diff = offset / block.data('speed');
                 block.css({ marginTop: -diff });
-                console.log(diff);
                 if( offset<=fadeStart ){
                     opacity=1;
                 }else if( offset<=fadeUntil ){
@@ -97,7 +102,6 @@
 
             $('[data-role="animate-scroll"]').each(function() {
                 var el = $(this);
-                // console.log(el, el.offset().top, scrollPos);
                 if (scrollPos >= el.offset().top && !el.hasClass(ANIMATION_CLASS)) {
                     el.addClass(ANIMATION_CLASS);
                 }
@@ -111,6 +115,7 @@
     // document ready
     $(window).on('load', function() {
         equalheight('.works .work .work-info');
+        header();
         Welcome();
         scrollDownShow();
         animateElements();
