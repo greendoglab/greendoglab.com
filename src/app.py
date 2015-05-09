@@ -17,6 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 DEBUG = False
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_MARKDOWN_EXTENSIONS = ['nl2br', 'tables', 'attr_list', 'extra']
+FLATPAGES_AUTO_RELOAD = True
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
 WORKS_DIR = 'works'
