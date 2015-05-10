@@ -38,16 +38,20 @@ freezer = Freezer(app)
 
 
 # templatetags
-def url_for_other_page(page):
-    args = request.view_args.copy()
-    args['page'] = page
-    return url_for(request.endpoint, **args)
-
-
 def mark(value):
     return markdown.markdown(value, FLATPAGES_MARKDOWN_EXTENSIONS)
 
-app.jinja_env.globals['url_for_other_page'] = url_for_other_page
+
+def dateformat(value, format='%Y-%m-%d'):
+    return value.strftime(format)
+
+
+def timeformat(value, format='%H:%M'):
+    return value.strftime(format)
+
+
+app.jinja_env.filters['dateformat'] = dateformat
+app.jinja_env.filters['timeformat'] = timeformat
 app.jinja_env.filters['mark'] = mark
 
 
