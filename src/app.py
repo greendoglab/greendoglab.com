@@ -63,8 +63,8 @@ def get_json_data(josnfile):
     return json.load(json_file)
 
 
-def sorted_posts(posts_list, sort_by):
-    return sorted(posts_list, reverse=True, key=lambda p: p.meta[sort_by])
+def sorted_posts(posts_list):
+    return sorted(posts_list, reverse=True, key=lambda p: p.meta['date'])
 
 
 # get tags
@@ -79,17 +79,16 @@ def get_tags():
 
 
 # get tagged posts
+def get_posts():
+    blog = [p for p in pages if p.path.startswith(POSTS_DIR)]
+    posts = sorted_posts(blog)
+    return posts
+
+
 def get_taget(posts_list, tag):
     tagged = [p for p in posts_list if tag in p.meta.get('tags', [])]
     tagged = sorted_posts(tagged)
     return tagged
-
-
-# get posts
-def get_posts(directory, sort_by):
-    content = [p for p in pages if p.path.startswith(directory)]
-    posts = sorted_posts(content, sort_by)
-    return posts
 
 
 def get_years(pages):
