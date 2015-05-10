@@ -6,9 +6,10 @@ import sys
 import json
 from flask import Flask, render_template, url_for, request
 from flask_flatpages import FlatPages
-from datetime import date, datetime
+from datetime import datetime
 from flask_frozen import Freezer
 import markdown
+from urlparse import urljoin
 
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -36,22 +37,32 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 
+
 # templatetags
 def url_for_other_page(page):
     args = request.view_args.copy()
     args['page'] = page
     return url_for(request.endpoint, **args)
 
-app.jinja_env.globals['url_for_other_page'] = url_for_other_page
 
 def mark(value):
     return markdown.markdown(value, FLATPAGES_MARKDOWN_EXTENSIONS)
 
+app.jinja_env.globals['url_for_other_page'] = url_for_other_page
 app.jinja_env.filters['mark'] = mark
 
+
 # functions
+def get_json_data(josnfile):
+    file_to_read = josnfile
+    file_to_parse = os.path.join(os.path.dirname(__file__), "content", file_to_read)
+    json_file = open(file_to_parse, "r")
+    return json.load(json_file)
+
+
 def sorted_posts(posts_list, sort_by):
     return sorted(posts_list, reverse=True, key=lambda p: p.meta[sort_by])
+
 
 # get posts
 def get_posts(directory, sort_by):
@@ -59,40 +70,42 @@ def get_posts(directory, sort_by):
     posts = sorted_posts(content, sort_by)
     return posts
 
-def make_external(url):
-    return urljoin(request.url_root, url)
+
+@app.context_processor
+def site_config():
+    return {'site_config': get_json_data('config.json')}
 
 
 # views
 @app.route('/')
 def index():
-    json_file = open(os.path.join(os.path.dirname(__file__), "content", "works.json"), "r")
-    works = json.load(json_file)
-    works.reverse()
     page = pages.get('pages/index')
-    return render_template(
-            'home.html',
-            page = page,
-            works = works
-    )
+    return render_template('home.html', page=page)
+
 
 # single page
-@app.route('/<path:path>/')
-def page(path):
-    work = pages.get_or_404(path)
-    template = 'work.html'
-    return render_template(template, work = work)
+# @app.route('/<path:path>/')
+# def page(path):
+#     work = pages.get_or_404(path)
+#     template = 'work.html'
+#     return render_template(template, work = work)
 
 
 @app.route('/404.html')
 def error404():
     return render_template('404.html')
 
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
 
+
 # freezer
+def make_external(url):
+    return urljoin(request.url_root, url)
+
+
 @freezer.register_generator
 def pages_frozen():
     for page in pages:
