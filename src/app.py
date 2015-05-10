@@ -67,11 +67,35 @@ def sorted_posts(posts_list, sort_by):
     return sorted(posts_list, reverse=True, key=lambda p: p.meta[sort_by])
 
 
+# get tags
+def get_tags():
+    z = (i.meta['tags'] for i in get_posts())
+    f = []
+    for i in z:
+        for a in i:
+            f.append(a)
+    tags = sorted(set(f))
+    return tags
+
+
+# get tagged posts
+def get_taget(posts_list, tag):
+    tagged = [p for p in posts_list if tag in p.meta.get('tags', [])]
+    tagged = sorted_posts(tagged)
+    return tagged
+
+
 # get posts
 def get_posts(directory, sort_by):
     content = [p for p in pages if p.path.startswith(directory)]
     posts = sorted_posts(content, sort_by)
     return posts
+
+
+def get_years(pages):
+    years = list(set([page.meta.get('date').year for page in pages]))
+    years.reverse()
+    return years
 
 
 @app.context_processor
