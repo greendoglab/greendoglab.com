@@ -123,11 +123,11 @@ def feed():
     return render_template('base.rss', pages=pages, BASE_URL=BASE_URL, build_date=now)
 
 
-@app.route('/archive/')
-def archive():
+@app.route('/stories/')
+def stories():
     years = get_years(get_posts())
     pages = get_posts()
-    return render_template('archive.html', pages=pages, years=years)
+    return render_template('stories.html', pages=pages, years=years)
 
 
 # single page
