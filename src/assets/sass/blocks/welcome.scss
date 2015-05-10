@@ -2,6 +2,7 @@
     @include table;
     background-size: cover;
     position: relative;
+    margin-top: -78px;
     .welcome-titles {
         box-sizing: border-box;
         @include table-cell;
@@ -31,22 +32,17 @@
             margin: 0;
             text-shadow: 1px 1px 3px black;
             color: #27ae60;
-            // color: #6E6E6E;
             text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
             margin-bottom: 30px;
         } // h1
         h2 {
             margin-bottom: 0;
             font-size: rem(40);
-            // color: #27ae60;
             color: #6E6E6E;
-            // text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
         } // h2
         .homepage-article {
             font-family: 'PT Sans', serif;
-            // color: #27ae60;
             color: #6E6E6E;
-            // text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
             p {
                 margin: 0;
             } // p

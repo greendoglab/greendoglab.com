@@ -16,9 +16,9 @@ header.site-header {
         float: left;
         @include transition(all, 0.8s, ease);
         opacity: 0;
-        &.state {
+        &.state, &.inpost {
             opacity: 1;
-        } // &.state
+        } // &.state, &.inpost
         a.menu-logo {
             @include inline-middle;
             background-image: url(/static/images/Logo2.png);

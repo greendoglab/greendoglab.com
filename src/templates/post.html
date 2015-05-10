@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block header_class %}inpost{% endblock %}
+
+{% block title %}{{ page.title }} - {% endblock title %}
+
+{% block home_link %}
+<a href="{{ url_for("index") }}" class="home"></a>
+{% endblock %}
+
+{% block content %}
+{% if page.meta.poster %}
+<div class="post-poster" data-role="post-poster" style="background: url({{ page.meta.poster }});"></div>
+{% endif %}
+<!-- post -->
+<section class="post">
+    <header>
+        <h1><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h1>
+        <div class="meta">
+            <time class="meta-date">
+                <i class="fa fa-clock-o"></i> {{ page.date|dateformat }} в {{ page.date|timeformat }}
+            </time>
+            <span class="meta-tags">
+                {% if page.meta.tags|length %}
+                    <i class="fa fa-tags"></i>
+                    {% for page_tag in page.meta.tags %}
+                        <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>{% if loop.last %}{% else %}, {% endif %}
+                    {% endfor %}
+                {% endif %}
+            </span>
+        </div>
+    </header>
+    <article>
+       {{ page.html|safe }}
+    </article>
+    <footer>
+        <div class="social">
+            <div class="social-likes" data-url="http://macgera.name{{ url_for("page", path=page.path) }}" data-title="{{ page.title }} – Блог Михаила Якименко">
+                <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+                <div class="twitter" data-via="macgera" title="Поделиться ссылкой в Твиттере">Twitter</div>
+                <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
+            </div>
+        </div>
+        <div class="post-add post-add-mobile">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- mg-mobile -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:320px;height:100px"
+                 data-ad-client="ca-pub-4786010444164080"
+                 data-ad-slot="7310960895"></ins>
+            <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+    </footer>
+</section>
+<!-- /post -->
+{% endblock content %}

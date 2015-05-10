@@ -12,6 +12,7 @@
 <!-- Render -->
 <link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/social-likes_flat.css">
 <link rel="stylesheet" type="text/css" href="/static/fonts/octicons.css">
 
 {% if config.DEBUG %}
@@ -37,13 +38,13 @@
 {{ bar }}
 
 <!-- header -->
-<header class="site-header {% block header_class %}{% endblock %}">
-    <div class="logo-block">
+<header class="site-header">
+    <div class="logo-block {% block header_class %}{% endblock %}">
         <a href="{{ url_for("index") }}" class="menu-logo"></a>
         <a href="{{ url_for("index") }}" class="green-word">GreenDogLab</a>
     </div>
     <ul class="site-menu">
-        <li><a href="">Stories</a></li>
+        <li><a href="{{ url_for("page", path="stories") }}">Stories</a></li>
         <li><a href="">Services</a></li>
         <li><a href="">About</a></li>
         <li><a href="">Contacts</a></li>

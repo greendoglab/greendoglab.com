@@ -92,7 +92,7 @@
         var elem = $('.scroll-down');
         setTimeout(function() {
             elem.addClass('active');
-        }, 800);
+        }, 400);
     }
 
     function animateElements() {
