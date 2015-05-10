@@ -106,16 +106,47 @@ def site_config():
 # views
 @app.route('/')
 def index():
-    page = pages.get('pages/index')
-    return render_template('home.html', page=page)
+    page = get_posts()[0]
+    pages = get_posts()[1:6]
+    return render_template('index.html', page=page, pages=pages)
+
+
+@app.route('/tag/<string:tag>/')
+def tag(tag):
+    posts = get_posts()
+    return render_template('tag.html', pages=get_taget(posts, tag), tag=tag)
+
+
+@app.route('/rss/')
+def feed():
+    pages = get_posts()[:FEED_MAX_LINKS]
+    now = datetime.now()
+    return render_template('base.rss', pages=pages, BASE_URL=BASE_URL, build_date=now)
+
+
+@app.route('/archive/')
+def archive():
+    years = get_years(get_posts())
+    pages = get_posts()
+    return render_template('archive.html', pages=pages, years=years)
 
 
 # single page
-# @app.route('/<path:path>/')
-# def page(path):
-#     work = pages.get_or_404(path)
-#     template = 'work.html'
-#     return render_template(template, work = work)
+@app.route('/<path:path>/')
+def page(path):
+    section = path.split('/')[0]
+    page = pages.get_or_404(path)
+    if section == 'blog':
+        template = 'post.html'
+    if section == 'page':
+        template = 'page.html'
+    return render_template(template, page=page)
+
+
+# sys pages
+@app.route('/403.html')
+def error403():
+    return render_template('403.html')
 
 
 @app.route('/404.html')
@@ -123,10 +154,14 @@ def error404():
     return render_template('404.html')
 
 
+@app.route('/500.html')
+def error500():
+    return render_template('500.html')
+
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
-
 
 # freezer
 def make_external(url):
