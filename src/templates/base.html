@@ -35,8 +35,6 @@
 </head>
 <body>
 
-{{ bar }}
-
 <!-- header -->
 <header class="site-header">
     <div class="logo-block {% block header_class %}{% endblock %}">
@@ -44,10 +42,10 @@
         <a href="{{ url_for("index") }}" class="green-word">GreenDogLab</a>
     </div>
     <ul class="site-menu">
-        <li><a href="{{ url_for("page", path="stories") }}">Stories</a></li>
-        <li><a href="">Services</a></li>
-        <li><a href="">About</a></li>
-        <li><a href="">Contacts</a></li>
+        <li><a href="{{ url_for("stories") }}">Stories</a></li>
+        <li><a href="{{ url_for("page", path="page/services") }}">Services</a></li>
+        <li><a href="{{ url_for("page", path="page/about") }}">About</a></li>
+        <li><a href="{{ url_for("page", path="page/contacts") }}">Contacts</a></li>
     </ul>
 </header>
 <!-- /header -->
