@@ -8,8 +8,8 @@
     margin: 45px 0;
     // padding: 10px 0;
     h1, h2, .green-link {
+        @include property(font-size, 50);
         display: block;
-        font-size: rem(50);
         text-decoration: none;
         text-align: center;
         color: #27ae60;
@@ -21,7 +21,7 @@
 } // aside
 
 .meta {
-    font-size: .7em;
+    @include property(font-size, 15);
     font-style: italic;
     color: #808080;
     a {
@@ -30,7 +30,7 @@
     &.bottom {
         text-align: center;
         margin-bottom: 1em;
-        font-size: 1em;
+        @include property(font-size, 16);
         a {
             text-decoration: none;
         } // a
@@ -79,7 +79,7 @@
         display: inline-block !important;
         margin: 0 0 40px 0;
     }
-}
+} // instagram
 
 .social-likes__widget {
     background: rgb(227, 232, 236);

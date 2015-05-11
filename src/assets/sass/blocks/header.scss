@@ -34,11 +34,12 @@ header.site-header {
             } // &.state, &.in-page
         } // menu-logo
         a.green-word {
-            float: left;
+            @include transition(all, 0.5s, ease);
             @include inline-middle;
+            @include property(font-size, 48);
+            float: left;
             color: #27ae60;
             font-family: 'PT Sans Narrow', sans-serif;
-            font-size: rem(48);
             z-index: 3;
             font-weight: 400;
             text-decoration: none;
@@ -46,7 +47,6 @@ header.site-header {
             position: relative;
             top: 15px;
             right: -10px;
-            @include transition(all, 0.5s, ease);
             text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
         } // green-word
     } // logo-block
@@ -58,7 +58,7 @@ header.site-header {
             margin-left: 10px;
         } // li
         li {
-            font-size: rem(18);
+            @include property(font-size, 18);
             a {
                 font-family: 'PT Sans Narrow', sans-serif;
                 text-decoration: none;

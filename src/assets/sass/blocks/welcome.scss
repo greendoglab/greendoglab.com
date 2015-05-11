@@ -28,7 +28,7 @@
             background-size: 100%;
         } // big-logo
         h1 {
-            font-size: rem(50);
+            @include property(font-size, 50);
             margin: 0;
             text-shadow: 1px 1px 3px black;
             color: #27ae60;
@@ -36,8 +36,8 @@
             margin-bottom: 30px;
         } // h1
         h2 {
+            @include property(font-size, 40);
             margin-bottom: 0;
-            font-size: rem(40);
             color: #6E6E6E;
         } // h2
         .homepage-article {

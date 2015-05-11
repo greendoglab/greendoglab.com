@@ -18,16 +18,16 @@
     } // &.with-poster
     @include bp(xs) {
         margin: 0 5% 0 5%;
-    }
+    } // xs
     @include bp(sm) {
         margin: 0 5% 0 5%;
-    }
+    } // sm
     @include bp(md) {
         margin: 0 10% 0 10%;
-    }
+    } // md
     @include bp(lg) {
         margin: 0 10% 0 10%;
-    }
+    } // lg
     .post-add {
         text-align: center;
         margin: 1em 0;
@@ -35,37 +35,37 @@
             display: none;
             @include bp(xs) {
                 display: none;
-            }
+            } // xs
             @include bp(sm) {
                 display: none;
-            }
+            } // sm
             @include bp(md) {
                 display: block;
-            }
+            } // md
             @include bp(lg) {
                 display: block;
-            }
+            } // lg
         } // &.post-add-desktop
         &.post-add-mobile {
             display: block;
             @include bp(xs) {
                 display: block;
-            }
+            } // xs
             @include bp(sm) {
                 display: block;
-            }
+            } // sm
             @include bp(md) {
                 display: none;
-            }
+            } // md
             @include bp(lg) {
                 display: none;
-            }
+            } // lg
         } // &.post-add-desktop
     } // aside
     header {
         text-align: center;
         h1 {
-            font-size: 1.4em;
+            @include property(font-size, 25);
             margin: 0;
             a {
                 color: $text-color;
@@ -77,10 +77,10 @@
                 } // &:hover
             } // a
             @include bp(md) {
-                font-size: 1.8em;
+                @include property(font-size, 40);
             } // md
             @include bp(lg) {
-                font-size: 1.8em;
+                @include property(font-size, 40);
             } // lg
         } // h1
     } // header
@@ -147,7 +147,7 @@
             text-align: center;
             font-style: italic;
             margin-top: 0;
-        }
+        } // mediadesc, mdesc
         p {
             img {
                 margin: 0 auto;
@@ -165,7 +165,7 @@
 .all-posts {
     text-align: center;
     .all-posts-link {
-        font-size: 2em;
+        @include property(font-size, 44);
         text-decoration: none;
         font-style: italic;
         color: #494949;
