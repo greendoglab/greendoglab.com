@@ -20,13 +20,6 @@
             border-color: rgba(45, 187, 46, 0.1);
             margin-bottom: 20px;
         } // hr
-        .big-logo {
-            @include inline-middle;
-            width: 170px;
-            height: 89px;
-            background: url(/static/images/LogoBig.png) no-repeat;
-            background-size: 100%;
-        } // big-logo
         h1 {
             @include property(font-size, 50);
             margin: 0;
