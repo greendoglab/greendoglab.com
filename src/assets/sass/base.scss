@@ -4,7 +4,7 @@ $text-color: #303030;
 $link-color: #27ae60;
 
 body {
-    @include property(font-size, 18);
+    @include font-size(18);
     line-height: 150%;
     background: #fff;
     font-family: 'PT Sans', serif;
@@ -17,10 +17,10 @@ body {
         overflow: hidden;
     } // &.open-menu
     @include bp(md) {
-        @include property(font-size, 22);
+        @include font-size(22);
     } // md
     @include bp(lg) {
-        @include property(font-size, 22);
+        @include font-size(22);
     } // lg
 } // body
 

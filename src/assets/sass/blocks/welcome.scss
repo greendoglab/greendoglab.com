@@ -21,7 +21,7 @@
             margin-bottom: 20px;
         } // hr
         h1 {
-            @include property(font-size, 50);
+            @include font-size(50);
             margin: 0;
             text-shadow: 1px 1px 3px black;
             color: #27ae60;
@@ -29,7 +29,7 @@
             margin-bottom: 30px;
         } // h1
         h2 {
-            @include property(font-size, 40);
+            @include font-size(40);
             margin-bottom: 0;
             color: #6E6E6E;
         } // h2

@@ -72,26 +72,13 @@
     box-sizing: border-box;
 }
 
-@mixin property($property, $values) {
+@mixin font-size($value) {
     $px : ();
     $rem: ();
-    @each $value in $values {
-        $px: append($px,  $value + px);
-        $rem: append($rem, rem($value));
-    }
-    #{$property}: $px;
-    #{$property}: $rem;
-}
-
-@mixin boxshadow($values, $color) {
-    $px : ();
-    $rem: ();
-    @each $value in $values {
-        $px: append($px,  $value + px);
-        $rem: append($rem, rem($value));
-    }
-    box-shadow: $px $color;
-    box-shadow: $rem $color;
+    $px: append($px,  $value + px);
+    $rem: append($rem, rem($value));
+    font-size: $px;
+    font-size: $rem;
 }
 
 @mixin bp($point) {

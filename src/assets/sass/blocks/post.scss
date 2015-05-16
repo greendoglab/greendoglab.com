@@ -65,7 +65,7 @@
     header {
         text-align: center;
         h1 {
-            @include property(font-size, 25);
+            @include font-size(25);
             font-family: 'Oswald', sans-serif;
             margin: 0;
             a {
@@ -78,10 +78,10 @@
                 } // &:hover
             } // a
             @include bp(md) {
-                @include property(font-size, 40);
+                @include font-size(40);
             } // md
             @include bp(lg) {
-                @include property(font-size, 40);
+                @include font-size(40);
             } // lg
         } // h1
     } // header
@@ -166,7 +166,7 @@
 .all-posts {
     text-align: center;
     .all-posts-link {
-        @include property(font-size, 44);
+        @include font-size(44);
         text-decoration: none;
         font-style: italic;
         color: #494949;

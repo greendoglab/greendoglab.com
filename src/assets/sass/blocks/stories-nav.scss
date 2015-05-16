@@ -1,0 +1,25 @@
+.stories-nav {;
+    @include clear-list-inline;
+    margin-top: 40px;
+    text-align: center;
+    li + li {
+        &:before {
+            @include inline-middle;
+            @include font-size(12);
+            color: #808080;
+            content: '\272A';
+            opacity: 0.5;
+        } // &:before
+    } // li + li
+    a {
+        @include font-size(26);
+        text-decoration: none;
+        font-style: italic;
+        color: #808080;
+        opacity: 0.5;
+        &:hover,
+        &.active {
+            opacity: 1;
+        } // &:hover, &.active
+    } // a
+} // stories-nav
