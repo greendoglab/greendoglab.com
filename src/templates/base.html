@@ -81,7 +81,11 @@
     <div  class="column social">
         <ul>
             {% for social in site_config.social %}
-                <li><a href="{{ social.url }}" target="_blanc" class="fa fa-{{ social.icon }}"></a></li>
+                <li>
+                    <a href="{{ social.url }}" target="_blanc">
+                        <span class="fa fa-{{ social.icon }}"></span>
+                    </a>
+                </li>
             {% endfor %}
         </ul>
     </div>
