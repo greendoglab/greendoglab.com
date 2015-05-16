@@ -98,6 +98,7 @@ def get_years(pages):
     return years
 
 
+# context processor
 @app.context_processor
 def site_config():
     return {'site_config': get_json_data('config.json')}
