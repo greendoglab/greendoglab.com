@@ -4,7 +4,7 @@
 import sys
 
 import json
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template, request
 from flask_flatpages import FlatPages
 from datetime import datetime
 from flask_frozen import Freezer
@@ -26,6 +26,7 @@ PAGES_DIR = 'page'
 ESTI_DIR = 'testimonials'
 PER_PAGE = 5
 FEED_MAX_LINKS = 5
+BASE_URL = "http://greendoglab.com"
 
 FREEZER_DESTINATION = '../production'
 FREEZER_RELATIVE_URLS = False
