@@ -9,6 +9,19 @@
 {% endblock %}
 
 {% block content %}
+<!-- stories-nav -->
+<ul class="stories-nav">
+    <li>
+        <a href="{{ url_for("stories") }}" class="active">All</a>
+    </li>
+    <li>
+        <a href="{{ url_for("tag", tag='Works') }}">Works</a>
+    </li>
+    <li>
+        <a href="{{ url_for("tag", tag='Projects') }}">Projects</a>
+    </li>
+</ul>
+<!-- /stories-nav -->
 <!-- posts_list -->
 <section class="posts-list">
 {% for year in years %}

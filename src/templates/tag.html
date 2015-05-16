@@ -2,16 +2,37 @@
 
 {% block header_class %}inpost{% endblock %}
 
-{% block title %}Записи с тэгом {{ tag }} - {% endblock title %}
+{% block title %}Tagged: {{ tag }} - {% endblock title %}
 
 {% block home_link %}
 <a href="{{ url_for("index") }}" class="home"></a>
 {% endblock %}
 
 {% block content %}
+<!-- stories-nav -->
+<ul class="stories-nav">
+    <li>
+        <a href="{{ url_for("stories") }}">All</a>
+    </li>
+    <li>
+        <a href="{{ url_for("tag", tag='Works') }}" class="{% if tag == 'Works' %}active{% endif %}">Works</a>
+    </li>
+    <li>
+        <a href="{{ url_for("tag", tag='Projects') }}" class="{% if tag == 'Projects' %}active{% endif %}">Projects</a>
+    </li>
+</ul>
+<!-- /stories-nav -->
 <!-- posts_list -->
 <section class="posts-list">
-    <h3>Метка {{ tag }}</h3>
+    {% if tag == 'Works' %}
+        <h3>Our Works</h3>
+    {% else %}
+        {% if tag == 'Projects' %}
+            <h3>Our Projects</h3>
+        {% else %}
+            <h3>Tagged: {{ tag }}</h3>
+        {% endif %}
+    {% endif %}
     <ul>
         {% for page in pages %}
         <li>
