@@ -45,16 +45,16 @@
 
     function header() {
         var windowHeight = $(window).height();
-        var logoBlock = $('.logo-block');
+        var headerBlock = $('.site-header');
 
         $(window).on('scroll', function() {
             var scrollPos = $(this).scrollTop();
 
             if (scrollPos >= (100)) {
-                logoBlock.addClass('state');
+                headerBlock.addClass('state');
             }
             else {
-                logoBlock.removeClass('state');
+                headerBlock.removeClass('state');
             }
         });
     }

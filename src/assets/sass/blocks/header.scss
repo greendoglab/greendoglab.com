@@ -11,14 +11,13 @@ header.site-header {
     border-bottom: 1px solid transparent;
     @include box;
     @include transition(all, 0.8s, ease);
+    &.state {
+        background-color: rgb(241, 245, 239);
+    } // &.state
     .logo-block {
         @include clearfix;
         float: left;
         @include transition(all, 0.8s, ease);
-        opacity: 0;
-        &.state, &.inpost {
-            opacity: 1;
-        } // &.state, &.inpost
         a.menu-logo {
             @include inline-middle;
             background-image: url(/static/images/Logo2.png);
@@ -28,15 +27,11 @@ header.site-header {
             width: 114px;
             height: 60px;
             float: left;
-            &.state, &.in-page {
-                height: 100px;
-                opacity: 1;
-            } // &.state, &.in-page
         } // menu-logo
         a.green-word {
             @include transition(all, 0.5s, ease);
             @include inline-middle;
-            @include property(font-size, 48);
+            @include property(font-size, 34);
             float: left;
             color: #27ae60;
             font-family: 'PT Sans Narrow', sans-serif;
