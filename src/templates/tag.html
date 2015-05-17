@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block header_class %}inpost{% endblock %}
+
+{% block title %}Tagged: {{ tag }} - {% endblock title %}
+
+{% block home_link %}
+<a href="{{ url_for("index") }}" class="home"></a>
+{% endblock %}
+
+{% block content %}
+<!-- stories-nav -->
+<ul class="stories-nav">
+    <li>
+        <a href="{{ url_for("stories") }}">All</a>
+    </li>
+    <li>
+        <a href="{{ url_for("tag", tag='Works') }}" class="{% if tag == 'Works' %}active{% endif %}">Works</a>
+    </li>
+    <li>
+        <a href="{{ url_for("tag", tag='Projects') }}" class="{% if tag == 'Projects' %}active{% endif %}">Projects</a>
+    </li>
+</ul>
+<!-- /stories-nav -->
+<!-- posts_list -->
+<section class="posts-list">
+    {% if tag == 'Works' %}
+        <h3>Our Works</h3>
+    {% else %}
+        {% if tag == 'Projects' %}
+            <h3>Our Projects</h3>
+        {% else %}
+            <h3>Tagged: {{ tag }}</h3>
+        {% endif %}
+    {% endif %}
+    <ul>
+        {% for page in pages %}
+        <li>
+            <h1><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h1>
+            <div class="meta">
+                <time class="meta-date">
+                    <i class="fa fa-clock-o"></i> {{ page.date|dateformat }} в {{ page.date|timeformat }}
+                </time>
+                <span class="meta-tags">
+                    {% if page.meta.tags|length %}
+                        <i class="fa fa-tags"></i>
+                        {% for page_tag in page.meta.tags %}
+                            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>{% if loop.last %}{% else %}, {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </span>
+                <span class="meta-comments">
+                    <i class="fa fa-comments-o"></i> <a href="{{ url_for("page", path=page.path) }}#disqus_thread"></a>
+                </span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+<!-- /posts_list -->
+{% endblock content %}

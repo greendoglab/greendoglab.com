@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block header_class %}inpost{% endblock %}
+
+{% block title %}Архив - {% endblock title %}
+
+{% block home_link %}
+<a href="{{ url_for("index") }}" class="home"></a>
+{% endblock %}
+
+{% block content %}
+<!-- stories-nav -->
+<ul class="stories-nav">
+    <li>
+        <a href="{{ url_for("stories") }}" class="active">All</a>
+    </li>
+    <li>
+        <a href="{{ url_for("tag", tag='Works') }}">Works</a>
+    </li>
+    <li>
+        <a href="{{ url_for("tag", tag='Projects') }}">Projects</a>
+    </li>
+</ul>
+<!-- /stories-nav -->
+<!-- posts_list -->
+<section class="posts-list">
+{% for year in years %}
+    <h3>Архив {{ year }}</h3>
+    <ul>
+        {% for page in pages %}
+        {% if page.date.year == year %}
+        <li>
+            <h1><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h1>
+            <div class="meta">
+                <time class="meta-date">
+                    <i class="fa fa-clock-o"></i> {{ page.date|dateformat }} в {{ page.date|timeformat }}
+                </time>
+                <span class="meta-tags">
+                    {% if page.meta.tags|length %}
+                        <i class="fa fa-tags"></i>
+                        {% for page_tag in page.meta.tags %}
+                            <a href="{{ url_for("tag", tag=page_tag) }}">{{ page_tag }}</a>{% if loop.last %}{% else %}, {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </span>
+            </div>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+{% endfor %}
+</section>
+<!-- /posts_list -->
+{% endblock content %}

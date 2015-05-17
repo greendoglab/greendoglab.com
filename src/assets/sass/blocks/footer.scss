@@ -1,7 +1,8 @@
 .site-footer {
-    padding: 40px 0;
-    font-size: rem(18);
+    @include font-size(18);
     @include box;
+    padding-top: 40px;
+    padding-bottom: 40px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -66,6 +67,7 @@
                 a {
                     text-decoration: none;
                     color: #27ae60;
+                    padding: 8px 10px;
                 } // a
             } // ul
         } // &.social

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block header_class %}inpost{% endblock %}
+
+{% block title %}{{ page.title }} - {% endblock title %}
+
+{% block home_link %}
+<a href="{{ url_for("index") }}" class="home"></a>
+{% endblock %}
+
+{% block content %}
+{% if page.meta.poster %}
+<div class="post-poster" data-role="post-poster" style="background: url({{ page.meta.poster }});"></div>
+{% endif %}
+<!-- post -->
+<section class="post">
+    <header>
+        <h1><a href="{{ url_for("page", path=page.path) }}">{{ page.title }}</a></h1>
+    </header>
+    <article>
+       {{ page.html|safe }}
+    </article>
+</section>
+<!-- /post -->
+{% endblock content %}

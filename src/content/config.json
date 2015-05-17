@@ -1,0 +1,16 @@
+{
+    "title": "We design & develop your product!",
+    "subtitle": "Front end development since 2009",
+    "welcomemessage": "Main specialization our team frontend. Also, we develop projects of any complexity on Django. \n\nTechnology what we use: HTML, CSS, JavaScript, jQuery, AngularJS, Django.",
+    "ordermessage": "Order design or something else",
+    "currentlocation": "Dumaguete, Philippines",
+    "phone": "+639158393974",
+    "email": "miha@greendoglab.com",
+    "social": [
+        {
+            "icon": "github",
+            "url": "https://github.com/greendoglab"
+        }
+    ],
+    "copyroghts": "GreenDogLab.com 2008-forever"
+}

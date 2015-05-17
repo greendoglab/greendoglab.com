@@ -1,8 +1,10 @@
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
 $text-color: #303030;
-$link-color: #3498db;
+$link-color: #27ae60;
 
 body {
-    font-size: rem(18);    
+    @include font-size(18);
     line-height: 150%;
     background: #fff;
     font-family: 'PT Sans', serif;
@@ -10,14 +12,15 @@ body {
     color: $text-color;
     padding: 0;
     margin: 0;
+    padding-top: 78px;
     &.open-menu {
         overflow: hidden;
     } // &.open-menu
     @include bp(md) {
-        font-size: rem(22);
+        @include font-size(22);
     } // md
     @include bp(lg) {
-        font-size: rem(22);
+        @include font-size(22);
     } // lg
 } // body
 

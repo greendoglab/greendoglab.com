@@ -12,6 +12,7 @@
 <!-- Render -->
 <link rel="stylesheet" type="text/css" href="/static/css/normalize.css">
 <link rel="stylesheet" type="text/css" href="/static/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/social-likes_flat.css">
 <link rel="stylesheet" type="text/css" href="/static/fonts/octicons.css">
 
 {% if config.DEBUG %}
@@ -35,9 +36,17 @@
 <body>
 
 <!-- header -->
-<header class="site-header {% block header_class %}{% endblock %}">
-    <a href="{{ url_for("index") }}" class="menu-logo"></a>
-    <a href="{{ url_for("index") }}" class="green-word">GreenDogLab</a>
+<header class="site-header">
+    <div class="logo-block {% block header_class %}{% endblock %}">
+        <a href="{{ url_for("index") }}" class="menu-logo"></a>
+        <a href="{{ url_for("index") }}" class="green-word">GreenDogLab</a>
+    </div>
+    <ul class="site-menu">
+        <li><a href="{{ url_for("stories") }}">Stories</a></li>
+        <li><a href="{{ url_for("page", path="page/services") }}">Services</a></li>
+        <li><a href="{{ url_for("page", path="page/about") }}">About</a></li>
+        <li><a href="{{ url_for("page", path="page/contacts") }}">Contacts</a></li>
+    </ul>
 </header>
 <!-- /header -->
 
@@ -46,7 +55,7 @@
 
 <!-- aside -->
 <aside class="big-title-line">
-    <a href="mailto:miha@greendoglab.com" class="green-link" ng-hide="hideOrderLink">Order design or something else &rarr;</a>
+    <a href="mailto:{{ site_config.email }}" class="green-link" ng-hide="hideOrderLink">{{ site_config.ordermessage }}</a>
 </aside>
 <!-- /aside -->
 
@@ -56,38 +65,38 @@
     <div  class="column location-list">
         <ul>
             <li>Current location</li>
-            <li class="location">Lapu-Lapu city, Philippines</li>
+            <li class="location">{{ site_config.currentlocation }}</li>
         </ul>
     </div>
     <!-- /column location-list-->
     <!-- column -->
     <div  class="column">
         <ul>
-            <li>+380 98 887-84-84</li>
-            <li><a href="mailto:miha@greendoglab.com">miha@greendoglab.com</a></li>
+            <li>{{ phone }}</li>
+            <li><a href="mailto:{{ email }}">{{ site_config.email }}</a></li>
         </ul>
     </div>
     <!-- /column -->
     <!-- column social-->
     <div  class="column social">
         <ul>
-            <li><a href="https://github.com/greendoglab" target="_blanc" class="fa fa-github"></a></li>
-            <li><a href="#" target="_blanc" class="fa fa-google-plus"></a></li>
-            <li><a href="#" target="_blanc" class="fa fa-twitter"></a></li>
+            {% for social in site_config.social %}
+                <li>
+                    <a href="{{ social.url }}" target="_blanc">
+                        <span class="fa fa-{{ social.icon }}"></span>
+                    </a>
+                </li>
+            {% endfor %}
         </ul>
     </div>
     <!-- /column social-->
     <!-- column -->
     <div  class="column">
-        <span>GreenDogLab.com (c) 2008-forever</span>
+        <span>&copy; {{ site_config.copyroghts }}</span>
     </div>
     <!-- /column -->
 </footer>
 <!-- /footer -->
-
-<div class="ua-label-box">
-    <div class="ua-label"></div>
-</div>
 
 </body>
 </html>
