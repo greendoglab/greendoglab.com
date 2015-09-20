@@ -1,8 +1,23 @@
+// fonts
+@mixin font-size($value) {
+    font-size: $value + px;
+    font-size: rem($value);
+}
+
 // transition
 @mixin transition($property, $duration, $timing) {
     transition-property: $property;
     transition-duration: $duration;
     transition-timing-function: $timing;
+}
+
+@mixin no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 // lists
@@ -60,34 +75,68 @@
     box-sizing: border-box;
 }
 
-@mixin box {
-    padding-left: 50px;
-    padding-right: 50px;
-    box-sizing: border-box;
+@mixin elipsis {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-@mixin box-small {
-    padding-left: 180px;
-    padding-right: 180px;
-    box-sizing: border-box;
+@mixin icon-fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
 }
 
 @mixin bp($point) {
-    $bp-xs: "(min-width : 480px)";
-    $bp-sm: "(min-width : 768px)";
-    $bp-md: "(min-width : 992px)";
+    $bp-xs: "(max-width : 480px)";
+    $bp-xs-helpdesk: "(min-width : 480px) and (max-width : 768px)";
+    $bp-sm: "(min-width : 768px) and (max-width : 992px)";
+    $bp-md: "(min-width : 992px) and (max-width : 1200px)";
     $bp-lg: "(min-width : 1200px)";
 
+    // extrasmall – mobile
     @if $point == xs {
         @media #{$bp-xs} { @content; }
+        @media #{$bp-xs-helpdesk} { @content; }
     }
+    // small – (not only mobile)
     @if $point == sm {
         @media #{$bp-sm} { @content; }
     }
+    // medium – smallscreen laptop & tablets & some mobile
     @if $point == md {
         @media #{$bp-md} { @content; }
     }
+    // medium – big screens
     @if $point == lg {
         @media #{$bp-lg} { @content; }
     }
+}
+
+@mixin slide-down {
+    @include transition(all, 0.4s, ease);
+    opacity: 0;
+    transform: translate(0, -200%);
+    &.active {
+        transform: translate(0, 0);
+        opacity: 1;
+    } // active
+}
+
+// flex
+@mixin flex {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
