@@ -3,12 +3,9 @@
 
 import sys
 
-import json
-from flask import Flask, render_template, url_for, request
+from flask import Flask, render_template
 from flask_flatpages import FlatPages
-from datetime import date, datetime
 from flask_frozen import Freezer
-import markdown
 
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -36,14 +33,10 @@ pages = FlatPages(app)
 freezer = Freezer(app)
 
 
-def make_external(url):
-    return urljoin(request.url_root, url)
-
-
 @app.context_processor
-def inject_ga():
-    let_work = pages.get('home/let-work')
-    return let_work
+def let_work_data():
+    lets_work = pages.get('home/lets-work')
+    return dict(lets_work=lets_work)
 
 
 # views
@@ -63,21 +56,24 @@ def index():
         about=about
     )
 
+
 # single page
 @app.route('/<path:path>/')
 def page(path):
     page = pages.get_or_404(path)
     template = 'page.html'
-    return render_template(template, page = page)
+    return render_template(template, page=page)
 
 
 @app.route('/404.html')
 def error404():
     return render_template('404.html')
 
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
+
 
 # freezer
 @freezer.register_generator
