@@ -10,63 +10,70 @@
 </div>
 <!-- /welcome -->
 <!-- ui/ux -->
-<div class="uiux">
-    <header class="uiux-header">
+<div class="content">
+    <header class="content-header">
         <h2 class="title">{{ ui.title }}</h2>
         <h3 class="subtitle">{{ ui.subtitle }}</h3>
-        <div class="uiux-content">
-            <figure class="illustration--left">
-                <img src="{{ ui.illustration }}" alt="">
-            </figure>
-            <article class="content-article">
-                {{ ui.html|safe }}
-            </article>
+        <div class="content-box">
+            <div class="cbox-35">
+                <figure class="illustration">
+                    <img src="{{ ui.illustration }}" alt="">
+                </figure>
+            </div>
+            <div class="cbox-65">
+                <article class="article">
+                    {{ ui.html|safe }}
+                </article>
+            </div>
         </div>
     </header>
 </div>
 <!-- /ui/ux -->
 <!-- front-and-back -->
-<div class="front-and-back">
-    <div class="front">
-        <figure class="illustration">
-            <img src="{{ front.illustration }}" alt="">
-        </figure>
-        <h2 class="title">{{ front.title }}</h2>
-        <article class="content-article">
-            {{ front.html|safe }}
-        </article>
-    </div>
-    <div class="back">
-        <h2 class="title">{{ back.title }}</h2>
-        <article class="content-article">
-            {{ back.html|safe }}
-        </article>
-        <figure class="illustration">
-            <img src="{{ back.illustration }}" alt="">
-        </figure>
+<div class="content">
+    <div class="content-box">
+        <div class="cbox-eq">
+            <figure class="illustration">
+                <img src="{{ front.illustration }}" alt="">
+            </figure>
+            <h2 class="title">{{ front.title }}</h2>
+            <article class="article centered">
+                {{ front.html|safe }}
+            </article>
+        </div>
+        <div class="cbox-eq">
+            <h2 class="title">{{ back.title }}</h2>
+            <article class="article centered">
+                {{ back.html|safe }}
+            </article>
+            <figure class="illustration">
+                <img src="{{ back.illustration }}" alt="">
+            </figure>
+        </div>
     </div>
 </div>
 <!-- /front-and-back -->
 <!-- why -->
-<div class="why">
-    <h2 class="title--middle-tide">{{ why.title }}</h2>
-    <article class="content-article">
+<div class="content">
+    <h2 class="title middle-tide">{{ why.title }}</h2>
+    <article class="article centered">
         {{ why.html|safe }}
     </article>
 </div>
 <!-- /why -->
 <!-- about -->
-<div class="about">
-    <header class="about-header">
-        <h2 class="title">{{ about.title }}</h2>
-    </header>
-    <div class="about-content">
-        <figure class="illustration--left">
-            <img src="{{ about.illustration }}" alt="">
-        </figure>
-        <article class="content-article">
-            {{ about.html|safe }}
-        </article>
+<div class="content">
+    <div class="content-box">
+        <div class="cbox-35">
+            <figure class="illustration">
+                <img src="{{ about.illustration }}" alt="">
+            </figure>
+        </div>
+        <div class="cbox-65">
+            <article class="article">
+                {{ about.html|safe }}
+            </article>
+        </div>
     </div>
 </div>
 <!-- /about -->
