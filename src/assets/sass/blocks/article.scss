@@ -1,9 +1,14 @@
-.content-article {
+.article {
     color: #747474;
     @include font-size(20);
+    &.centered {
+        text-align: center;
+    } // centered
+    // childrens
     h2, h3, h4, h5 {
         color: #747474;
-        text-align: center;
+        font-family: 'PT Sans', sans-serif;
+        font-weight: 700;
     } // h2, h3, h4, h5
     table {
         width: 100%;
@@ -56,4 +61,4 @@
             margin: 0 auto;
         } // img
     } // p
-} // content-article
+} // article

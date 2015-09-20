@@ -1,0 +1,20 @@
+[class^="cbox"] {
+    box-sizing: border-box;
+    padding: 0 20px;
+    &:nth-child(1) {
+        padding-left: 0px;
+    }
+    &:nth-last-child(1) {
+        padding-right: 0px;
+    }
+} // [class=^="cbox"]
+
+.cbox-35 {
+    width: 35%;
+} // 35 %
+.cbox-65 {
+    width: 65%;
+} // 65 %
+.cbox-eq {
+    width: 50%;
+} // equal

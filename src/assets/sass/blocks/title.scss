@@ -1,0 +1,11 @@
+.title {
+    @include font-size(20);
+    color: #27AE60;
+    text-shadow: 2px 2px 0px #D8F1E1;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.5;
+    &.middle-tide {
+        @include font-size(30);
+    } // &.middle-tide
+}

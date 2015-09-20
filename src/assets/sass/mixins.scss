@@ -142,6 +142,20 @@
 }
 
 @mixin basic-block {
-    padding: 80px 50px;
-    padding-top: 0px;
+    @include bp(xs) {
+        padding: 50px 20px;
+        padding-top: 0px;
+    } // xs
+    @include bp(sm) {
+        padding: 50px 20px;
+        padding-top: 0px;
+    } // sm
+    @include bp(md) {
+        padding: 80px 60px;
+        padding-top: 0px;
+    } // md
+    @include bp(lg) {
+        padding: 80px 80px;
+        padding-top: 0px;
+    } // lg
 }
