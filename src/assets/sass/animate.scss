@@ -1,18 +1,4 @@
-@keyframes scrollDownBox {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes ScrollDown {
-    0% {opacity: .2;}
-    15% {opacity: 1;}
-    30% {opacity: .2;}
-}
-
+// welcome animation
 @keyframes tada {
     0% {
         transform: scale3d(1, 1, 1);
@@ -33,54 +19,4 @@
     100% {
         transform: scale3d(1, 1, 1);
     }
-}
-
-@keyframes bounceInDown {
-    0%, 60%, 75%, 90%, 100% {
-        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    }
-
-    0% {
-        opacity: 0;
-        transform: translate3d(0, -3000px, 0);
-    }
-
-    60% {
-        opacity: 1;
-        transform: translate3d(0, 25px, 0);
-    }
-
-    75% {
-        transform: translate3d(0, -10px, 0);
-    }
-
-    90% {
-        transform: translate3d(0, 5px, 0);
-    }
-
-    100% {
-        transform: none;
-    }
-}
-
-@keyframes inUp {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 20%, 0);
-  }
-
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
-}
-
-@keyframes fadeOut {
-    0% {opacity: 1;}
-    100% {opacity: 0;}
 }
