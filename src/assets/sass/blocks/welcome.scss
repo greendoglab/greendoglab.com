@@ -1,0 +1,27 @@
+.welcome {
+    @include table;
+    position: relative;
+    .welcome-content {
+        @include table-cell;
+        height: 100vh;
+        vertical-align: middle;
+        text-align: center;
+        &__logo {
+            @include inline-middle;
+            width: 170px;
+            height: 89px;
+            background: url(/static/images/LogoBig.png) no-repeat;
+            background-size: 100%;
+            margin-bottom: 15px;
+        } // lo&__logogo
+        &__title {
+            font-size: rem(40);
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 1px 1px 3px black;
+            color: #27ae60;
+            text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
+            margin-bottom: 30px;
+        } // &__title
+    } // welcome-content
+} // welcome
