@@ -4,5 +4,5 @@ We are a small but efficient team and we did a lot of projects. We know process 
 
 Communication and Reporting! Read about our [approach](/page/approach/).
 
-And we love what we do!
-{: .title--specia-why}
+And we love what we do! 
+{: .title-specia-why}
