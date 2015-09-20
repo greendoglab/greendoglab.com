@@ -140,3 +140,8 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+@mixin basic-block {
+    padding: 80px 50px;
+    padding-top: 0px;
+}
