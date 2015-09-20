@@ -35,52 +35,40 @@ app.config.from_object(__name__)
 pages = FlatPages(app)
 freezer = Freezer(app)
 
-# templatetags
-def url_for_other_page(page):
-    args = request.view_args.copy()
-    args['page'] = page
-    return url_for(request.endpoint, **args)
-
-app.jinja_env.globals['url_for_other_page'] = url_for_other_page
-
-def mark(value):
-    return markdown.markdown(value, FLATPAGES_MARKDOWN_EXTENSIONS)
-
-app.jinja_env.filters['mark'] = mark
-
-# functions
-def sorted_posts(posts_list, sort_by):
-    return sorted(posts_list, reverse=True, key=lambda p: p.meta[sort_by])
-
-# get posts
-def get_posts(directory, sort_by):
-    content = [p for p in pages if p.path.startswith(directory)]
-    posts = sorted_posts(content, sort_by)
-    return posts
 
 def make_external(url):
     return urljoin(request.url_root, url)
 
 
+@app.context_processor
+def inject_ga():
+    let_work = pages.get('home/let-work')
+    return let_work
+
+
 # views
 @app.route('/')
 def index():
-    json_file = open(os.path.join(os.path.dirname(__file__), "content", "works.json"), "r")
-    works = json.load(json_file)
-    works.reverse()
-    page = pages.get('pages/index')
+    ui = pages.get('home/ui')
+    front = pages.get('home/front')
+    back = pages.get('home/back')
+    why = pages.get('home/why')
+    about = pages.get('home/about')
     return render_template(
-            'home.html',
-            page = page,
-            works = works
+        'home.html',
+        ui=ui,
+        front=front,
+        back=back,
+        why=why,
+        about=about
     )
 
 # single page
 @app.route('/<path:path>/')
 def page(path):
-    work = pages.get_or_404(path)
-    template = 'work.html'
-    return render_template(template, work = work)
+    page = pages.get_or_404(path)
+    template = 'page.html'
+    return render_template(template, page = page)
 
 
 @app.route('/404.html')
