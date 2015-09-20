@@ -55,4 +55,19 @@
     </article>
 </div>
 <!-- /why -->
+<!-- about -->
+<div class="about">
+    <header class="about-header">
+        <h2 class="title">{{ about.title }}</h2>
+    </header>
+    <div class="about-content">
+        <figure class="illustration--left">
+            <img src="{{ about.illustration }}" alt="">
+        </figure>
+        <article class="content-article">
+            {{ about.html|safe }}
+        </article>
+    </div>
+</div>
+<!-- /about -->
 {% endblock content %}
