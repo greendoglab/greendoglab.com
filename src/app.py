@@ -13,7 +13,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # config
 DEBUG = False
 FLATPAGES_AUTO_RELOAD = DEBUG
-FLATPAGES_MARKDOWN_EXTENSIONS = ['nl2br', 'tables', 'attr_list', 'extra']
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
 WORKS_DIR = 'works'
@@ -22,6 +21,8 @@ PAGES_DIR = 'pages'
 ESTI_DIR = 'testimonials'
 PER_PAGE = 5
 FEED_MAX_LINKS = 5
+
+FLATPAGES_MARKDOWN_EXTENSIONS = ['tables', 'attr_list', 'extra']
 
 FREEZER_DESTINATION = '../production'
 FREEZER_RELATIVE_URLS = False
