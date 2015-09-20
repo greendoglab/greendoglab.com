@@ -1,4 +1,5 @@
 title: About us
+illustration: /static/images/ui.png
 
 We were a little bit, husband & wife. Sometimes we work with other people as contractors. But we know their job and work on the result.
 
