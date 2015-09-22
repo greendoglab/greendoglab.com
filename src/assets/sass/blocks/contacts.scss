@@ -22,14 +22,14 @@
         } // &:after
     } // &.email
     &__type {
-        @include font-size(15);
+        @include font-size(17);
         display: block;
         text-transform: uppercase;
         margin: 0;
         line-height: 1;
     } // &__type
     &__contact {
-        @include font-size(15);
+        @include font-size(17);
         display: block;
         margin: 0;
         line-height: 1;

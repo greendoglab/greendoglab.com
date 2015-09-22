@@ -15,13 +15,20 @@
             margin-bottom: 15px;
         } // lo&__logogo
         &__title {
-            font-size: rem(40);
+            font-size: rem(70);
+            padding: 0 20%;
             font-weight: 700;
             margin: 0;
             text-shadow: 1px 1px 3px black;
             color: #27ae60;
             text-shadow: 2px 3px 0 #FFFFFF, 6px 6px 0 rgba(46, 185, 96, 0.21);
             margin-bottom: 30px;
+            @include bp(xs) {
+                font-size: rem(50);
+            } // xs
+            @include bp(sm) {
+                font-size: rem(50);
+            } // sm
         } // &__title
     } // welcome-content
 } // welcome
