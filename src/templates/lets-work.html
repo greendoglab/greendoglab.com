@@ -1,0 +1,24 @@
+<!-- lets-work -->
+<div class="content">
+    <h2 class="title">{{ lets_work.title }}</h2>
+    <article class="article centered">
+        {{ lets_work.html|safe }}
+    </article>
+    <div class="content-box lets-work">
+        <div class="cbox-eq">
+            <div class="contacts phone">
+                <span class="contacts__type">Give us a call</span>
+                <span class="contacts__contact">{{ lets_work.phone }}</span>
+            </div>
+        </div>
+        <div class="cbox-eq">
+            <div class="contacts email">
+                <span class="contacts__type">Email us</span>
+                <span class="contacts__contact">
+                    <a href="mailto:{{ lets_work.email }}">{{ lets_work.email }}</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /lets-work -->
