@@ -1,3 +1,14 @@
 .content-box {
     @include flex;
+    &.lets-work {
+        $vorkpadings: 30%;
+        @include bp(md) {
+            padding-left: $vorkpadings;
+            padding-right: $vorkpadings;
+        } // md
+        @include bp(lg) {
+            padding-left: $vorkpadings;
+            padding-right: $vorkpadings;
+        } // lg
+    } // &.lets-work
 } // content-box

@@ -1,20 +1,51 @@
 [class^="cbox"] {
+    $padding: 20px;
     box-sizing: border-box;
-    padding: 0 20px;
+    padding: 0 $padding;
     &:nth-child(1) {
         padding-left: 0px;
+        @include bp(xs) {
+            padding-left: $padding;
+        } // xs
+        @include bp(sm) {
+            padding-left: $padding;
+        } // sm
     }
     &:nth-last-child(1) {
         padding-right: 0px;
+        @include bp(xs) {
+            padding-right: $padding;
+        } // xs
+        @include bp(sm) {
+            padding-right: $padding;
+        } // sm
     }
 } // [class=^="cbox"]
 
 .cbox-35 {
     width: 35%;
+    @include bp(xs) {
+        width: 100%;
+    } // xs
+    @include bp(sm) {
+        width: 100%;
+    } // sm
 } // 35 %
 .cbox-65 {
     width: 65%;
+    @include bp(xs) {
+        width: 100%;
+    } // xs
+    @include bp(sm) {
+        width: 100%;
+    } // sm
 } // 65 %
 .cbox-eq {
     width: 50%;
+    @include bp(xs) {
+        width: 100%;
+    } // xs
+    @include bp(sm) {
+        width: 100%;
+    } // sm
 } // equal
