@@ -1,0 +1,37 @@
+.contacts {
+    position: relative;
+    color: #747474;
+    a {
+        color: #747474;
+        text-decoration: none;
+    } // a
+    &.phone {
+        padding-right: 30px;
+        &:after {
+            content: '';
+            @include big-sized-icon(40px, 54px, '../images/phone.png');
+            transform: translate(-50px, -50%);
+        } // &:after
+    } // &.phone
+    &.email {
+        padding-left: 30px;
+        &:after {
+            content: '';
+            @include big-sized-icon(50px, 40px, '../images/email.png');
+            transform: translate(-60px, -50%);
+        } // &:after
+    } // &.email
+    &__type {
+        @include font-size(15);
+        display: block;
+        text-transform: uppercase;
+        margin: 0;
+        line-height: 1;
+    } // &__type
+    &__contact {
+        @include font-size(15);
+        display: block;
+        margin: 0;
+        line-height: 1;
+    } // &__contact
+} // contacts
