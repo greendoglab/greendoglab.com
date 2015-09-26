@@ -171,3 +171,11 @@
     background-position: 50% 50%;
     background-size: $width $height;
 }
+
+@mixin animation-in-up {
+    transform: translate3d(0, 20%, 0);
+    &.state {
+        animation: inUp 0.5s ease-out 1;
+        transform: translate3d(0, 0, 0);
+    } // &.state
+}
