@@ -1,0 +1,17 @@
+.discover {
+    @include inline-middle;
+    width: 200px;
+    padding-bottom: 24px;
+    top: 90vh;
+    left: calc(50% - 100px);
+    text-align: center;
+    position: absolute;
+    background-image: url(/static/images/discover.png);
+    background-repeat: no-repeat;
+    background-size: 48px 14px;
+    background-position: center bottom;
+    @include font-size(14);
+    color: #969696;
+    line-height: 1;
+} // discover
+
