@@ -2,6 +2,7 @@
     @include table;
     position: relative;
     .welcome-content {
+        @include animation-tada;
         @include table-cell;
         height: 100vh;
         vertical-align: middle;
