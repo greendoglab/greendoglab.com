@@ -167,10 +167,21 @@
     } // lg
 }
 
-@mixin big-sized-icon($width, $height, $img) {
+@mixin big-sized-icon-absolute($width, $height, $img) {
     @include vertical-align;
     position: absolute;
     display: block;
+    width: $width;
+    height: $height;
+    background: url($img);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: $width $height;
+}
+
+@mixin big-sized-icon($width, $height, $img) {
+    @include vertical-align;
+    @include inline-middle;
     width: $width;
     height: $height;
     background: url($img);

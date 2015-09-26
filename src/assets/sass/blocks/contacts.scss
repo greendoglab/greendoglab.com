@@ -7,19 +7,42 @@
     } // a
     &.phone {
         padding-right: 30px;
-        &:after {
+        &:before {
             content: '';
-            @include big-sized-icon(40px, 54px, '../images/phone.png');
+            @include big-sized-icon-absolute(40px, 54px, '../images/phone.png');
             transform: translate(-50px, -50%);
         } // &:after
+        @include bp(allsmall) {
+            width: 60%;
+            margin: auto;
+            padding-right: 0px;
+            text-align: center;
+            &:before {
+                @include big-sized-icon(40px, 54px, '../images/phone.png');
+                transform: translate(0, 0);
+                margin-bottom: 20px;
+            }
+        } // allsmall
     } // &.phone
     &.email {
         padding-left: 30px;
-        &:after {
+        &:before {
             content: '';
-            @include big-sized-icon(50px, 40px, '../images/email.png');
+            @include big-sized-icon-absolute(50px, 40px, '../images/email.png');
             transform: translate(-60px, -50%);
         } // &:after
+        @include bp(allsmall) {
+            padding-top: 20px;
+            width: 60%;
+            margin: auto;
+            padding-left: 0px;
+            text-align: center;
+            &:before {
+                @include big-sized-icon(50px, 40px, '../images/email.png');
+                transform: translate(0, 0);
+                margin-bottom: 20px;
+            }
+        } // allsmall
     } // &.email
     &__type {
         @include font-size(17);
@@ -27,11 +50,19 @@
         text-transform: uppercase;
         margin: 0;
         line-height: 1;
+        @include bp(allsmall) {
+            margin-top: 5px;
+            @include font-size(20);
+        } // allsmall
     } // &__type
     &__contact {
         @include font-size(17);
         display: block;
         margin: 0;
         line-height: 1;
+        @include bp(allsmall) {
+            margin-top: 5px;
+            @include font-size(20);
+        } // allsmall
     } // &__contact
 } // contacts
