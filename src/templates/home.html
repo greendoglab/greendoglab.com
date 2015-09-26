@@ -42,9 +42,11 @@
             </figure>
         </div>
         <div class="cbox-eq">
-            <figure class="illustration">
-                <img src="{{ back.illustration }}" alt="">
-            </figure>
+            {% for ill in back.illustration %}
+                <figure class="illustration">
+                    <img src="{{ ill }}" alt="" class="illustration__img">
+                </figure>
+            {% endfor %}
             <h2 class="title">{{ back.title }}</h2>
             <article class="article">
                 {{ back.html|safe }}
@@ -64,9 +66,9 @@
 <!-- about -->
 <div class="content">
     <div class="content-box">
-        <div class="cbox-35">
+        <div class="cbox-35 cbox-35--mid">
             <figure class="illustration">
-                <img src="{{ about.illustration }}" alt="">
+                <img src="{{ about.illustration }}" alt="" class="illustration__img">
             </figure>
         </div>
         <div class="cbox-65">
