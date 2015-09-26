@@ -1,0 +1,12 @@
+.illustration {
+    text-align: center;
+    &--front {
+        margin: auto;
+    } // &--front
+    &__img {
+        @include inline-middle;
+        &--front {
+            width: 80px;
+        }
+    } // &__img {}
+} // illustration
