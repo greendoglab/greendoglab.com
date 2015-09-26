@@ -35,9 +35,9 @@
 </div>
 <!-- /ui/ux -->
 <!-- front-and-back -->
-<div class="content" data-role="animate-scroll">
+<div class="content content--no-inup">
     <div class="content-box">
-        <div class="cbox cbox--eq">
+        <div class="cbox cbox--eq cbox--with-inup cbox--backfront" data-role="animate-scroll">
             <h2 class="title">{{ front.title }}</h2>
             <article class="article">
                 {{ front.html|safe }}
@@ -46,7 +46,7 @@
                 <img src="{{ front.illustration }}" alt="" class="illustration__img illustration__img--front">
             </figure>
         </div>
-        <div class="cbox cbox--eq">
+        <div class="cbox cbox--eq cbox--with-inup cbox--backfront" data-role="animate-scroll">
             {% for ill in back.illustration %}
                 <figure class="illustration">
                     <img src="{{ ill }}" alt="" class="illustration__img">
@@ -61,7 +61,7 @@
 </div>
 <!-- /front-and-back -->
 <!-- why -->
-<div class="content" data-role="animate-scroll">
+<div class="content content--no-inup" data-role="animate-scroll">
     <h2 class="title">{{ why.title }}</h2>
     <article class="article centered">
         {{ why.html|safe }}
@@ -69,14 +69,14 @@
 </div>
 <!-- /why -->
 <!-- about -->
-<div class="content" data-role="animate-scroll">
+<div class="content content--no-inup" data-role="animate-scroll">
     <div class="content-box">
-        <div class="cbox cbox--35 cbox--mid">
+        <div class="cbox cbox--35 cbox--mid cbox--with-inup" data-role="animate-scroll">
             <figure class="illustration">
                 <img src="{{ about.illustration }}" alt="" class="illustration__img">
             </figure>
         </div>
-        <div class="cbox cbox--65">
+        <div class="cbox cbox--65 cbox--with-inup" data-role="animate-scroll">
             <article class="article">
                 {{ about.html|safe }}
             </article>

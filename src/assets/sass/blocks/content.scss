@@ -1,4 +1,7 @@
 .content {
     @include basic-block;
     @include animation-in-up;
+    &--no-inup {
+        @include no-animation-in-up;
+    } // no-animation
 } // content

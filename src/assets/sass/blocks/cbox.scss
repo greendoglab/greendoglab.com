@@ -20,6 +20,9 @@
             padding-right: $padding;
         } // sm
     }
+    &--with-inup {
+        @include animation-in-up;
+    } // &--with-animate
     &--mid {
         align-self: center;
     }
@@ -50,4 +53,14 @@
             width: 100%;
         } // sm
     } // &--eq
+    @include bp(allsmall) {
+        $padding-between-backfront: 50px;
+        &--backfront:nth-child(1) {
+            padding-bottom: $padding-between-backfront;
+        } // &--backfront
+        &--backfront + &--backfront {
+            border-top: 1px solid #ADADAD;
+            padding-top: $padding-between-backfront;
+        } // &--backfront + &--backfront
+    } // xs
 } // cbox

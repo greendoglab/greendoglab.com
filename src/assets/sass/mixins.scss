@@ -99,6 +99,13 @@
     $bp-md: "(min-width : 992px) and (max-width : 1200px)";
     $bp-lg: "(min-width : 1200px)";
 
+    // all mob
+    @if $point == allsmall {
+        @media #{$bp-xs} { @content; }
+        @media #{$bp-xs-helpdesk} { @content; }
+        @media #{$bp-sm} { @content; }
+    }
+
     // extrasmall – mobile
     @if $point == xs {
         @media #{$bp-xs} { @content; }
@@ -178,6 +185,10 @@
         animation: inUp 0.5s ease-out 1;
         transform: translate3d(0, 0, 0);
     } // &.state
+}
+
+@mixin no-animation-in-up {
+    transform: translate3d(0, 0%, 0);
 }
 
 @mixin animation-tada {
