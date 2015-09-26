@@ -84,10 +84,20 @@
     }
 
     function scrollDownShow() {
-        var elem = $('.scroll-down');
+        var elem = $('.discover');
         setTimeout(function() {
-            elem.addClass('active');
+            elem.addClass('discover--active');
         }, 800);
+    }
+
+    function scrollToContent() {
+        var trigger = $('[data-role="scroll-to-content"]');
+        var windowHeight = $(window).height();
+        trigger.click(function() {
+            $('html, body').animate({
+              scrollTop: windowHeight
+            }, 1000);
+        });
     }
 
     function animateElements() {
@@ -114,6 +124,7 @@
         Welcome();
         scrollDownShow();
         animateElements();
+        scrollToContent();
     });
 
     // all initial on window resize

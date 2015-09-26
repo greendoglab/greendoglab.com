@@ -36,3 +36,12 @@ http://daneden.github.io/animate.css/
         transform: none;
     }
 }
+
+@keyframes scrollDownBox {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -1,5 +1,5 @@
 .discover {
-    @include inline-middle;
+    display: none;
     width: 200px;
     padding-bottom: 24px;
     top: 90vh;
@@ -13,5 +13,11 @@
     @include font-size(14);
     color: #969696;
     line-height: 1;
+    cursor: pointer;
+    z-index: 999;
+    &--active {
+        @include inline-middle;
+        animation: scrollDownBox 1s ease-out 1;
+    } // &--active
 } // discover
 
