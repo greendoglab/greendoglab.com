@@ -179,3 +179,7 @@
         transform: translate3d(0, 0, 0);
     } // &.state
 }
+
+@mixin animation-tada {
+    animation: tada .5s ease-out 1;
+}
