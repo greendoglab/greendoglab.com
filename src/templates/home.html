@@ -20,12 +20,12 @@
         <h2 class="title">{{ ui.title }}</h2>
         <h3 class="subtitle">{{ ui.subtitle }}</h3>
         <div class="content-box">
-            <div class="cbox-35">
+            <div class="cbox cbox--35">
                 <figure class="illustration">
                     <img src="{{ ui.illustration }}" alt="">
                 </figure>
             </div>
-            <div class="cbox-65">
+            <div class="cbox cbox--65">
                 <article class="article">
                     {{ ui.html|safe }}
                 </article>
@@ -37,7 +37,7 @@
 <!-- front-and-back -->
 <div class="content" data-role="animate-scroll">
     <div class="content-box">
-        <div class="cbox-eq">
+        <div class="cbox cbox--eq">
             <h2 class="title">{{ front.title }}</h2>
             <article class="article">
                 {{ front.html|safe }}
@@ -46,7 +46,7 @@
                 <img src="{{ front.illustration }}" alt="" class="illustration__img illustration__img--front">
             </figure>
         </div>
-        <div class="cbox-eq">
+        <div class="cbox cbox--eq">
             {% for ill in back.illustration %}
                 <figure class="illustration">
                     <img src="{{ ill }}" alt="" class="illustration__img">
@@ -71,12 +71,12 @@
 <!-- about -->
 <div class="content" data-role="animate-scroll">
     <div class="content-box">
-        <div class="cbox-35 cbox-35--mid">
+        <div class="cbox cbox--35 cbox--mid">
             <figure class="illustration">
                 <img src="{{ about.illustration }}" alt="" class="illustration__img">
             </figure>
         </div>
-        <div class="cbox-65">
+        <div class="cbox cbox--65">
             <article class="article">
                 {{ about.html|safe }}
             </article>

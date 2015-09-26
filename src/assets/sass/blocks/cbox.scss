@@ -1,4 +1,4 @@
-[class^="cbox"] {
+.cbox {
     $padding: 20px;
     box-sizing: border-box;
     padding: 0 $padding;
@@ -20,35 +20,34 @@
             padding-right: $padding;
         } // sm
     }
-} // [class=^="cbox"]
-
-.cbox-35 {
-    width: 35%;
-    @include bp(xs) {
-        width: 100%;
-    } // xs
-    @include bp(sm) {
-        width: 100%;
-    } // sm
     &--mid {
         align-self: center;
     }
-} // 35 %
-.cbox-65 {
-    width: 65%;
-    @include bp(xs) {
-        width: 100%;
-    } // xs
-    @include bp(sm) {
-        width: 100%;
-    } // sm
-} // 65 %
-.cbox-eq {
-    width: 50%;
-    @include bp(xs) {
-        width: 100%;
-    } // xs
-    @include bp(sm) {
-        width: 100%;
-    } // sm
-} // equal
+    &--35 {
+        width: 35%;
+        @include bp(xs) {
+            width: 100%;
+        } // xs
+        @include bp(sm) {
+            width: 100%;
+        } // sm
+    } // &--35
+    &--65 {
+        width: 65%;
+        @include bp(xs) {
+            width: 100%;
+        } // xs
+        @include bp(sm) {
+            width: 100%;
+        } // sm
+    } // &--65
+    &--eq {
+        width: 50%;
+        @include bp(xs) {
+            width: 100%;
+        } // xs
+        @include bp(sm) {
+            width: 100%;
+        } // sm
+    } // &--eq
+} // cbox
