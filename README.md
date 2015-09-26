@@ -1,6 +1,6 @@
 # Green Dog Lab website
 
-Simple website created with [flask](http://flask.pocoo.org/)
+Project development with [Django](https://www.djangoproject.com/)
 
 We are make design & frontend, also we build projects based on django.
 
