@@ -1,4 +1,5 @@
 title: Sliced and Hand Coded Your design
+illustration: /static/images/front.png
 
 Translate your design to readable, semantic, modern and cusomizable code using  a modular approach.
 
