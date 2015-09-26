@@ -30,6 +30,9 @@
     @include bp(sm) {
         width: 100%;
     } // sm
+    &--mid {
+        align-self: center;
+    }
 } // 35 %
 .cbox-65 {
     width: 65%;
