@@ -1,0 +1,18 @@
+.page-content {
+    @include basic-block;
+    @include animation-in-up;
+} // .page-content
+
+.page-content-header {
+    &__title {
+        text-align: center;
+    } // &__title
+} // page-content-header
+
+.page-content-content {
+    width: 60%;
+    margin: auto;
+    @include bp(allsmall) {
+        width: calc(100% - 40px);
+    } // allsmall
+} // page-content-content

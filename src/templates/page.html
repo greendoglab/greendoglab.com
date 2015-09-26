@@ -2,13 +2,15 @@
 
 {% block content %}
 <!-- content -->
-<section class="page-content">
-    <header>
-        <h1>{{ page.title }}</h1>
+<section class="page-content state">
+    <header class="page-content-header">
+        <h1 class="page-content-header__title">{{ page.title }}</h1>
     </header>
-    <article>
-        {{ page.html|safe }}
-    </article>
+    <div class="page-content-content">
+        <article class="article">
+            {{ page.html|safe }}
+        </article>
+    </div>
 </section>
 <!-- /content -->
 {% endblock content %}
